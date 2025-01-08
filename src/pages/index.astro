@@ -3,6 +3,8 @@ import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import EscortsCarousel from "../components/EscortsCarousel.svelte";
+import { Image } from 'astro:assets';
+import girl1 from "/src/assets/girls/1.jpg";
 import "../styles/index.scss";
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
@@ -54,11 +56,12 @@ import "../styles/index.scss";
                     </div>
                 </div>
                 <div class="relative p-8">
-                    <img
+                    <Image src={girl1} alt="Girl"/>
+                    <!-- <img
                         class=""
                         src="/src/assets/girls/1.jpg"
                         alt=""
-                    />
+                    /> -->
                 </div>
             </div>
             <div></div>
@@ -70,11 +73,12 @@ import "../styles/index.scss";
     <section class="float-left w-full py-20">
         <div class="w-full h-[600px] float-left bg-white">
             <div class="w-2/4 p-0 h-full float-left">
-                <img
+                <Image class="w-full h-full object-cover" src={girl1} alt="Girl"/>
+                <!-- <img
                     class="w-full h-full object-cover"
                     src="/src/assets/girls/1.jpg"
                     alt=""
-                />
+                /> -->
             </div>
             <div class="w-2/4 h-full p-8 float-left">
                 <h1 class="text-black text-3xl text-center">
