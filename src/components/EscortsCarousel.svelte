@@ -6,35 +6,35 @@
     let escorts = [
         {
             name: "Aria Mesa",
-            image: girl1
+            image: girl1.src
         },
         {
             name: "Dora",
-            image: girl2
+            image: girl2.src
         },
         {
             name: "Caitlyn",
-            image: girl3
+            image: girl3.src
         },
         {
             name: "Aria Mesa",
-            image: girl1
+            image: girl1.src
         },
         {
             name: "Dora",
-            image: girl2
+            image: girl2.src
         },
         {
             name: "Caitlyn",
-            image: girl3
+            image: girl3.src
         },
         {
             name: "Aria Mesa",
-            image: girl1
+            image: girl1.src
         },
         {
             name: "Dora",
-            image: girl2
+            image: girl2.src
         }
     ];
 </script>
