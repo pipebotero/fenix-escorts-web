@@ -1,60 +1,58 @@
-<script module>
-	let escorts = [
+<script>
+	import girl1 from "/src/assets/girls/1.jpg";
+    import girl2 from "/src/assets/girls/2.jpg";
+    import girl3 from "/src/assets/girls/3.jpg";
+
+    let escorts = [
         {
             name: "Aria Mesa",
-            image: "1.jpg"
+            image: girl1
         },
         {
             name: "Dora",
-            image: "2.jpg"
+            image: girl2
         },
         {
             name: "Caitlyn",
-            image: "3.jpg"
+            image: girl3
         },
         {
             name: "Aria Mesa",
-            image: "1.jpg"
+            image: girl1
         },
         {
             name: "Dora",
-            image: "2.jpg"
+            image: girl2
         },
         {
             name: "Caitlyn",
-            image: "3.jpg"
+            image: girl3
         },
         {
             name: "Aria Mesa",
-            image: "1.jpg"
+            image: girl1
         },
         {
             name: "Dora",
-            image: "2.jpg"
+            image: girl2
         },
         {
             name: "Caitlyn",
-            image: "3.jpg"
+            image: girl3
         },
         {
             name: "Aria Mesa",
-            image: "1.jpg"
+            image: girl1
         },
         {
             name: "Dora",
-            image: "2.jpg"
+            image: girl2
         },
         {
             name: "Caitlyn",
-            image: "3.jpg"
+            image: girl3
         }
     ];
-</script>
-
-<script>
-	function greet() {
-		alert('Welcome to Svelte!');
-	}
 </script>
 
 <div class="max-w-[90vw] min-h-[80vh] w-full mx-auto pt-8">
@@ -62,7 +60,7 @@
         {#each escorts as escort}
             <div class="flex flex-col items-center aspect-[3/4]">
                 <a class="w-full transition aspect-[3/4] overflow-hidden relative" href="">
-                    <img class="w-full h-full object-cover" src={`/src/assets/girls/${escort.image}`} alt=""/>
+                    <img class="w-full h-full object-cover" src={escort.image} alt=""/>
                 </a>
                 <div class="text-white">{escort.name}</div>
             </div>

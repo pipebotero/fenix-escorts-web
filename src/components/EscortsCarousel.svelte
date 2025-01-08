@@ -1,36 +1,40 @@
-<script module>
-	let escorts = [
+<script>
+	import girl1 from "/src/assets/girls/1.jpg";
+    import girl2 from "/src/assets/girls/2.jpg";
+    import girl3 from "/src/assets/girls/3.jpg";
+
+    let escorts = [
         {
             name: "Aria Mesa",
-            image: "/src/assets/girls/1.jpg"
+            image: girl1
         },
         {
             name: "Dora",
-            image: "/src/assets/girls/2.jpg"
+            image: girl2
         },
         {
             name: "Caitlyn",
-            image: "/src/assets/girls/3.jpg"
+            image: girl3
         },
         {
             name: "Aria Mesa",
-            image: "/src/assets/girls/1.jpg"
+            image: girl1
         },
         {
             name: "Dora",
-            image: "/src/assets/girls/2.jpg"
+            image: girl2
         },
         {
             name: "Caitlyn",
-            image: "/src/assets/girls/3.jpg"
+            image: girl3
         },
         {
             name: "Aria Mesa",
-            image: "/src/assets/girls/1.jpg"
+            image: girl1
         },
         {
             name: "Dora",
-            image: "/src/assets/girls/2.jpg"
+            image: girl2
         }
     ];
 </script>
