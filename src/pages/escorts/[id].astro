@@ -1,0 +1,614 @@
+---
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import EscortSpecs from "../../components/EscortSpecs.astro";
+import Layout from "../../layouts/Layout.astro";
+import "../../styles/index.scss";
+import girl1 from "/src/assets/girls/1.jpg";
+import girl2 from "/src/assets/girls/2.jpg";
+import girl3 from "/src/assets/girls/3.jpg";
+
+export const prerender = false;
+
+export async function GET() {
+  let number = Math.random();
+  return new Response(
+    JSON.stringify({
+      number,
+      message: `Here's a random number: ${number}`,
+    })
+  );
+}
+const { id } = Astro.params;
+const { height, hair, eyes, tits, ass } = {
+  height: "179",
+  hair: "Negro",
+  eyes: "Grises",
+  tits: 34,
+  ass: "L",
+};
+---
+
+<Layout>
+  <Header />
+  <div class="pt-[2.8rem] relative w-full min-h-[90vh]">
+    <div
+      id="portfolioSection"
+      class="portfolioSection block relative pt-10 mb-10"
+    >
+      <div
+        class="escort-info-container w-[40%] 2xl:w-[50%] z-[40] pointer-events-auto left-cursor-div absolute h-full left-0 bg-transparent bg-opacity-25 cursor-pointer"
+      >
+        <div
+          class="w-max absolute left-1/2 right-24 transition-all duration-[1100ms] 2xl:mix-blend-difference flex items-center h-full"
+          style="display: flex; opacity: 1; transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);"
+        >
+          <!-- transform: none; transform-origin: 50% 50% 0px;-->
+          <div
+            class="w-full pointer-events-auto z-[20] relative 2xl:mix-blend-difference"
+          >
+            <h1 class="text-[1.7rem] uppercase text-[#dc0000] mb-6">ARIA</h1>
+            <EscortSpecs
+              height={height}
+              hair={hair}
+              eyes={eyes}
+              tits={tits}
+              ass={ass}
+            />
+            <!-- <div class="flex gap-1">
+              <div class="flex flex-col justify-center items-center w-[100px] h-[70px] bg-[#555] rounded-xl">
+                <span class="text-[#000] uppercase">1 Hora</span>
+                <span class="flex text-[#000]">200 <img src="/src/assets/icons/euro.png" width="22"></span>
+              </div>
+              <div class="flex flex-col justify-center items-center w-[100px] h-[70px] bg-[#555] rounded-xl">
+                <span class="text-[#000] uppercase">2 Horas</span>
+                <span class="flex text-[#000]">300 <img src="/src/assets/icons/euro.png" width="22"></span>
+              </div>
+              <div class="flex flex-col justify-center items-center w-[100px] h-[70px] bg-[#555] rounded-xl">
+                <span class="text-[#000] uppercase">4 Horas</span>
+                <span class="flex text-[#000]">500 <img src="/src/assets/icons/euro.png" width="22"></span>
+              </div>
+            </div> -->
+          </div>
+        </div>
+      </div>
+      <div
+        class="bg-transparent cross-icon-div fixed left-0 top-20 w-[10%] z-[46] h-20"
+      >
+      </div>
+      <div
+        class="bg-transparent cross-icon-div fixed right-0 top-20 w-[10%] z-[46] h-20"
+      >
+      </div>
+      <div class="slick-slider slick-initialized relative block" dir="ltr">
+        <button
+          type="button"
+          data-role="none"
+          class="slick-arrow slick-prev slick-disabled"
+          style="display:block"
+        >
+          <!-- -->Previous</button
+        >
+        <!-- z-[46] -->
+        <div class="slick-list z-[35]">
+          <div
+            id="slick-track"
+            class="slick-track"
+            style="width:800%; left:0%; opacity: 1; transform: translate3d(0px, 0px, 0px);"
+          >
+            <!-- transition: -webkit-transform 1100ms cubic-bezier(0.645, 0.045, 0.355, 1); -->
+            <div
+              data-index="0"
+              class="slick-slide slick-active slick-current"
+              tabindex="-1"
+              aria-hidden="false"
+              style="outline:none; width:12.5%"
+            >
+              <div>
+                <div tabindex="-1" style="width: 100%; display: inline-block;">
+                  <div
+                    class="flex flex-col gap-8 md:gap-4 my-12 md:flex-row w-full justify-center items-center md:my-12"
+                    data-projection-id="7"
+                  >
+                    <div
+                      class="w-[25%] flex pointer-events-none justify-end items-center h-full"
+                    >
+                    </div><img
+                      transition:name={`img-${id}`}
+                      class="md:h-[calc(100vh_-_9.2rem)] overflow-hidden object-cover h-auto aspect-[3/4] object-top"
+                      alt="Aalyah Ross"
+                      src={girl1.src}
+                      data-projection-id="8"
+                      style="opacity: 1;"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              data-index="1"
+              class="slick-slide"
+              tabindex="-1"
+              aria-hidden="true"
+              style="outline: none; width:12.5%;"
+            >
+              <div>
+                <div tabindex="-1" style="width: 100%; display: inline-block;">
+                  <div
+                    class="flex flex-col gap-8 md:gap-4 my-12 md:flex-row w-full justify-center items-center md:my-12"
+                  >
+                    <div
+                      class="w-[25%] flex pointer-events-none justify-end items-center h-full"
+                    >
+                    </div>
+                    <img
+                      loading="eager"
+                      class="md:h-[calc(100vh_-_9.2rem)] overflow-hidden object-cover h-auto aspect-[3/4]"
+                      alt="Aalyah Ross"
+                      src="https://mediaslide-us.storage.googleapis.com/imgmodels/pictures/5442/113439/large-1727200577-64d8966d6e07b13516244f01f8aa6833.jpg"
+                    />
+                    <!-- <img
+                      loading="eager"
+                      class="md:h-[calc(100vh_-_9.2rem)] portfolio-image overflow-hidden min-h-[400px] object-contain"
+                      alt="Aalyah Ross"
+                      src="https://mediaslide-us.storage.googleapis.com/imgmodels/pictures/5442/113439/large-1727200578-94f30e0d54e436ffcd0587a93a9df4b9.jpg"
+                    /> -->
+                  </div>
+                </div>
+              </div>
+            </div><div
+              data-index="2"
+              class="slick-slide"
+              tabindex="-1"
+              aria-hidden="true"
+              style="outline: none; width:12.5%;"
+            >
+              <div>
+                <div tabindex="-1" style="width: 100%; display: inline-block;">
+                  <div
+                    class="flex flex-col gap-8 md:gap-4 my-12 md:flex-row w-full justify-center items-center md:my-12"
+                  >
+                    <div
+                      class="w-[25%] flex pointer-events-none justify-end items-center h-full"
+                    >
+                    </div>
+                    <img
+                      loading="eager"
+                      class="md:h-[calc(100vh_-_9.2rem)] overflow-hidden object-cover h-auto aspect-[3/4]"
+                      alt="Aalyah Ross"
+                      src="https://mediaslide-us.storage.googleapis.com/imgmodels/pictures/5442/113439/large-1727200578-4ea01163f7fbd6baaffd40d6ce57937f.jpg"
+                    />
+                    <!-- <img
+                      loading="eager"
+                      class="md:h-[calc(100vh_-_9.2rem)] portfolio-image overflow-hidden min-h-[400px] object-contain"
+                      alt="Aalyah Ross"
+                      src="https://mediaslide-us.storage.googleapis.com/imgmodels/pictures/5442/113439/large-1727200579-1136e7538275f9d7ab7c8bfdee4b2612.jpg"
+                    /> -->
+                  </div>
+                </div>
+              </div>
+            </div><div
+              data-index="3"
+              class="slick-slide"
+              tabindex="-1"
+              aria-hidden="true"
+              style="outline: none; width:12.5%;"
+            >
+              <div>
+                <div tabindex="-1" style="width: 100%; display: inline-block;">
+                  <div
+                    class="flex flex-col gap-8 md:gap-4 my-12 md:flex-row w-full justify-center items-center md:my-12"
+                  >
+                    <div
+                      class="w-[25%] flex pointer-events-none justify-end items-center h-full"
+                    >
+                    </div>
+                    <img
+                      loading="eager"
+                      class="md:h-[calc(100vh_-_9.2rem)] overflow-hidden object-cover h-auto aspect-[3/4]"
+                      alt="Aalyah Ross"
+                      src="https://mediaslide-us.storage.googleapis.com/imgmodels/pictures/5442/113439/large-1727200579-2d8fdc11ee35a66c0bae8e8a9543c784.jpg"
+                    />
+                    <!-- <img
+                      loading="eager"
+                      class="md:h-[calc(100vh_-_9.2rem)] portfolio-image overflow-hidden min-h-[400px] object-contain"
+                      alt="Aalyah Ross"
+                      src="https://mediaslide-us.storage.googleapis.com/imgmodels/pictures/5442/113439/large-1727200582-5f13b45116c03df3f43a583264b8838f.jpg"
+                    /> -->
+                  </div>
+                </div>
+              </div>
+            </div><div
+              data-index="4"
+              class="slick-slide"
+              tabindex="-1"
+              aria-hidden="true"
+              style="outline: none; width:12.5%;"
+            >
+              <div>
+                <div tabindex="-1" style="width: 100%; display: inline-block;">
+                  <div
+                    class="flex flex-col gap-8 md:gap-4 my-12 md:flex-row w-full justify-center items-center md:my-12"
+                  >
+                    <div
+                      class="w-[25%] flex pointer-events-none justify-end items-center h-full"
+                    >
+                    </div>
+                    <img
+                      loading="eager"
+                      class="md:h-[calc(100vh_-_9.2rem)] overflow-hidden object-cover h-auto aspect-[3/4]"
+                      alt="Aalyah Ross"
+                      src="https://mediaslide-us.storage.googleapis.com/imgmodels/pictures/5442/113439/large-1727200582-a207b7e7b4e081f8941bc545446e683a.jpg"
+                    />
+                    <!-- <img
+                      loading="eager"
+                      class="md:h-[calc(100vh_-_9.2rem)] portfolio-image overflow-hidden min-h-[400px] object-contain"
+                      alt="Aalyah Ross"
+                      src="https://mediaslide-us.storage.googleapis.com/imgmodels/pictures/5442/113439/large-1727200583-8e93cc223e3cbce6c1e0078c27f7cfac.jpg"
+                    /> -->
+                  </div>
+                </div>
+              </div>
+            </div><div
+              data-index="5"
+              class="slick-slide"
+              tabindex="-1"
+              aria-hidden="true"
+              style="outline: none; width:12.5%;"
+            >
+              <div>
+                <div tabindex="-1" style="width: 100%; display: inline-block;">
+                  <div
+                    class="flex flex-col gap-8 md:gap-4 my-12 md:flex-row w-full justify-center items-center md:my-12"
+                  >
+                    <div
+                      class="w-[25%] flex pointer-events-none justify-end items-center h-full"
+                    >
+                    </div>
+                    <img
+                      loading="eager"
+                      class="md:h-[calc(100vh_-_9.2rem)] overflow-hidden object-cover h-auto aspect-[3/4]"
+                      alt="Aalyah Ross"
+                      src="https://mediaslide-us.storage.googleapis.com/imgmodels/pictures/5442/113439/large-1727200583-ef9d213128842f96a9c9a24732fafaf3.jpg"
+                    />
+                    <!-- <img
+                      loading="eager"
+                      class="md:h-[calc(100vh_-_9.2rem)] portfolio-image overflow-hidden min-h-[400px] object-contain"
+                      alt="Aalyah Ross"
+                      src="https://mediaslide-us.storage.googleapis.com/imgmodels/pictures/5442/113439/large-1727200584-0fa7b7333fc33cf6a463308e680d0aeb.jpg"
+                    /> -->
+                  </div>
+                </div>
+              </div>
+            </div><div
+              data-index="6"
+              class="slick-slide"
+              tabindex="-1"
+              aria-hidden="true"
+              style="outline: none; width:12.5%;"
+            >
+              <div>
+                <div tabindex="-1" style="width: 100%; display: inline-block;">
+                  <div
+                    class="flex flex-col gap-8 md:gap-4 my-12 md:flex-row w-full justify-center items-center md:my-12"
+                  >
+                    <div
+                      class="w-[25%] flex pointer-events-none justify-end items-center h-full"
+                    >
+                    </div>
+                    <img
+                      loading="eager"
+                      class="md:h-[calc(100vh_-_9.2rem)] overflow-hidden object-cover h-auto aspect-[3/4]"
+                      alt="Aalyah Ross"
+                      src="https://mediaslide-us.storage.googleapis.com/imgmodels/pictures/5442/113439/large-1727200584-041a2a64f99f975e820a0a350fb311d8.jpg"
+                    />
+                    <!-- <img
+                      loading="eager"
+                      class="md:h-[calc(100vh_-_9.2rem)] portfolio-image overflow-hidden min-h-[400px] object-contain"
+                      alt="Aalyah Ross"
+                      src="https://mediaslide-us.storage.googleapis.com/imgmodels/pictures/5442/113439/large-1727200585-09d10787676b1ef2806e0182a8211bed.jpg"
+                    /> -->
+                  </div>
+                </div>
+              </div>
+            </div><div
+              data-index="7"
+              class="slick-slide"
+              tabindex="-1"
+              aria-hidden="true"
+              style="outline: none; width:12.5%;"
+            >
+              <div>
+                <div tabindex="-1" style="width: 100%; display: inline-block;">
+                  <div
+                    class="flex flex-col gap-8 md:gap-4 my-12 md:flex-row w-full justify-center items-center md:my-12"
+                  >
+                    <div
+                      class="w-[25%] flex pointer-events-none justify-end items-center h-full"
+                    >
+                    </div>
+                    <img
+                      loading="eager"
+                      class="md:h-[calc(100vh_-_9.2rem)] overflow-hidden object-cover h-auto aspect-[3/4]"
+                      alt="Aalyah Ross"
+                      src="https://mediaslide-us.storage.googleapis.com/imgmodels/pictures/5442/113439/large-1727200585-9514686b710f178c3bf61655c8b63ae0.jpg"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div><button
+          type="button"
+          data-role="none"
+          class="slick-arrow slick-next"
+          style="display:block"
+        >
+          <!-- -->Next</button
+        >
+      </div>
+
+      <!-- <div class="flex flex-col items-center w-72 aspect-[3/4]">
+                <img
+                    transition:name={`img-${id}`}
+                    class="list-item-overlay-img w-full h-full object-cover"
+                    src={girl1.src}
+                    alt=""
+                />
+            </div> -->
+    </div>
+  </div>
+  <Footer />
+</Layout>
+<script>
+  document.addEventListener("mousemove", function (e) {
+    isMouseInBox(e);
+  });
+
+  function transitionImgGallery() {
+    let portfolioSection: HTMLElement | null =
+      document.querySelector("#portfolioSection");
+    if (portfolioSection === null) return;
+    portfolioSection!.addEventListener("click", function (e) {
+      let cursorPos = e.clientX - window.innerWidth / 2;
+      let slickTrack: HTMLElement | null =
+        document.querySelector("#slick-track");
+      let numChilds = slickTrack?.childElementCount;
+
+      let translateObj = getMatrix(slickTrack);
+      let bodyWidth = document.body.clientWidth;
+      let slickTrackWidth = slickTrack!.clientWidth;
+      let translateRes = 0;
+      let escortInfoContainer: HTMLElement | null = document.querySelector(
+        ".escort-info-container"
+      );
+      if (cursorPos < 0) {
+        if (translateObj.x === 0) {
+          translateObj.x = -slickTrackWidth;
+          escortInfoContainer!.classList.remove("z-[40]");
+          escortInfoContainer!.classList.add("-z-[40]");
+          setTimeout(() => {
+            escortInfoContainer!.classList.remove("-z-[40]");
+            escortInfoContainer!.classList.add("z-[40]");
+          }, 1100);
+        } else {
+          escortInfoContainer!.classList.remove("z-[40]");
+          escortInfoContainer!.classList.add("z-[1]");
+          setTimeout(() => {
+            escortInfoContainer!.classList.remove("z-[1]");
+            escortInfoContainer!.classList.add("z-[40]");
+          }, 1100);
+        }
+        translateRes = translateObj.x + bodyWidth;
+        slickTrack!.style.transition =
+          "-webkit-transform 1100ms cubic-bezier(0.645, 0.045, 0.355, 1)";
+        slickTrack!.style.transform =
+          "translate3d(" + translateRes + "px, 0px, 0px)";
+      } else if (cursorPos > 0) {
+        translateRes = translateObj.x - bodyWidth;
+        if (translateRes * -1 >= slickTrackWidth) {
+          translateRes = 0;
+          escortInfoContainer!.classList.remove("z-[40]");
+          escortInfoContainer!.classList.add("-z-[40]");
+          setTimeout(() => {
+            escortInfoContainer!.classList.remove("-z-[40]");
+            escortInfoContainer!.classList.add("z-[40]");
+          }, 1100);
+        } else {
+          escortInfoContainer!.classList.remove("z-[40]");
+          escortInfoContainer!.classList.add("z-[1]");
+          setTimeout(() => {
+            escortInfoContainer!.classList.remove("z-[1]");
+            escortInfoContainer!.classList.add("z-[40]");
+          }, 1100);
+        }
+        slickTrack!.style.transition =
+          "-webkit-transform 1100ms cubic-bezier(0.645, 0.045, 0.355, 1)";
+        slickTrack!.style.transform =
+          "translate3d(" + translateRes + "px, 0px, 0px)";
+      } else {
+        slickTrack!.style.transform = slickTrack!.style.transform;
+      }
+      //   console.log(slickTrack!.style.transform.);
+      // transform: translate3d(-1905px, 0px, 0px);
+      console.log({ numChilds });
+    });
+  }
+
+  function getMatrix(element: any) {
+    const values = element.style.transform.split(/\w+\(|\);?/);
+    const transform = values[1]
+      .split(/,\s?/g)
+      .map((d: any) => parseInt(d.replace("px", "")));
+    return {
+      x: transform[0],
+      y: transform[1],
+      z: transform[2],
+    };
+  }
+  // if (window.innerWidth < 1280)
+  //     return null;
+  // {
+  //     let l = document.querySelector("#portfolioSection")
+  //         , t = e.clientX - window.innerWidth / 2;
+  //     l && (t < 0 ? l.style.cursor = 'url("/icons/prev.svg"), auto' : t > 0 ? l.style.cursor = 'url("/icons/next.svg"), auto' : l.style.cursor = "default")
+  // }
+  function isMouseInBox(event: any) {
+    let portfolioSection: HTMLElement | null =
+      document.querySelector("#portfolioSection");
+    let cursorPos = event.clientX - window.innerWidth / 2;
+    if (portfolioSection === null) return;
+    cursorPos < 0
+      ? (portfolioSection!.style.cursor =
+          'url("/src/assets/icons/prev.svg"), auto')
+      : cursorPos > 0
+        ? (portfolioSection!.style.cursor =
+            'url("/src/assets/icons/next.svg"), auto')
+        : (portfolioSection!.style.cursor = "default");
+    // if(cursorPos > 0) {
+    //     portfolioSection.style.cursor = 'url("/src/assets/icons/next.svg"), auto';
+    // }
+  }
+  transitionImgGallery();
+  document.addEventListener("astro:after-swap", transitionImgGallery);
+
+  (function () {})();
+</script>
+<style>
+  .slick-initialized .slick-slide {
+    display: block;
+  }
+
+  .slick-list,
+  .slick-slider {
+    position: relative;
+    display: block;
+  }
+  .slick-slider {
+    box-sizing: border-box;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+    -khtml-user-select: none;
+    touch-action: pan-y;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .slick-slider .slick-list,
+  .slick-slider .slick-track {
+    transform: translateZ(0);
+  }
+
+  .slick-list {
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+  }
+  .slick-list,
+  .slick-slider {
+    position: relative;
+    display: block;
+  }
+  .slick-track {
+    position: relative;
+    top: 0;
+    left: 0;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .slick-track:after,
+  .slick-track:before {
+    display: table;
+    content: "";
+  }
+  .slick-slide {
+    display: none;
+    float: left;
+    height: 100%;
+    min-height: 1px;
+  }
+  .slick-slide,
+  .slick-slide * {
+    outline: none !important;
+  }
+  .slick-slide img {
+    display: block;
+  }
+
+  .slick-prev {
+    left: -25px;
+  }
+  .slick-next {
+    right: -25px;
+  }
+
+  .slick-next,
+  .slick-next:focus,
+  .slick-next:hover,
+  .slick-prev,
+  .slick-prev:focus,
+  .slick-prev:hover {
+    color: transparent;
+    outline: none;
+    background: transparent;
+  }
+
+  .slick-next,
+  .slick-prev {
+    font-size: 0;
+    line-height: 0;
+    position: absolute;
+    top: 50%;
+    display: block;
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    transform: translateY(-50%);
+    cursor: pointer;
+    border: none;
+  }
+  .slick-arrow {
+    display: none !important;
+  }
+  [role="button"],
+  button {
+    cursor: pointer;
+  }
+  button,
+  input:where([type="button"]),
+  input:where([type="reset"]),
+  input:where([type="submit"]) {
+    -webkit-appearance: button;
+    background-color: transparent;
+    background-image: none;
+  }
+  button,
+  select {
+    text-transform: none;
+  }
+  button,
+  input,
+  optgroup,
+  select,
+  textarea {
+    font-family: inherit;
+    font-feature-settings: inherit;
+    font-variation-settings: inherit;
+    font-size: 100%;
+    font-weight: inherit;
+    line-height: inherit;
+    letter-spacing: inherit;
+    color: inherit;
+    margin: 0;
+    padding: 0;
+  }
+  .right-cursor-div:hover {
+    cursor: url(/src/assets/icons/next.svg), auto;
+  }
+
+  .left-cursor-div:hover {
+    cursor: url(/src/assets/icons/prev.svg), auto;
+  }
+</style>

@@ -2,10 +2,10 @@
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import EscortsCarousel from "../components/EscortsCarousel.svelte";
+import EscortsCarousel from "../components/EscortsCarousel.astro";
 import { Image } from 'astro:assets';
 import mosaicImage from "/src/assets/images/TREBOL-BLACK-01-F882151-01-32.webp";
-import homeVideo from "/src/assets/video/BannerWebFenix_01.mp4";
+import homeVideo from "/src/assets/video/FINAL_BannerWebFenix_01.mp4";
 import girl1 from "/src/assets/girls/1.jpg";
 import "../styles/index.scss";
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
@@ -14,8 +14,8 @@ import "../styles/index.scss";
 
 <Layout>
     <Header />
-    <div class="relative">
-        <video src={homeVideo} autoplay loop muted
+    <div class="w-full h-screen relative">
+        <video class="w-full h-full object-cover" src={homeVideo} autoplay loop muted
         ></video>
         <div class="flex flex-col justify-center h-screen absolute top-0 p-10">
             <h1 class="text-[48px] text-[#dc0000] uppercase">conoce</h1>

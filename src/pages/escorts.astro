@@ -1,7 +1,7 @@
 ---
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import EscortsCompoent from '../components/Escorts.svelte';
+import EscortsCompoent from '../components/Escorts.astro';
 import Layout from '../layouts/Layout.astro';
 import '../styles/index.scss';
 
@@ -11,7 +11,7 @@ import '../styles/index.scss';
 
 <Layout>
 	<Header />
-	<div class="mt-[90px]">
+	<div transition:animate="slide" class="mt-[90px]">
 		<EscortsCompoent />
 	</div>
 	<Footer />

@@ -1,4 +1,7 @@
 .btn {
+    width: max-content;
+    width: -moz-max-content;
+    width: -webkit-max-content;
     font-family: 'Satoshi';
     font-size: inherit;
     cursor: pointer;
@@ -26,7 +29,6 @@
 /* Pseudo elements for icons */
 .btn:before {
     font-family: "icomoon";
-    speak: none;
     font-style: normal;
     font-weight: normal;
     font-variant: normal;
