@@ -1,0 +1,149 @@
+---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Escorts from "../components/Escorts.astro";
+import Layout from "../layouts/Layout.astro";
+import "../styles/index.scss";
+import bgImage from "/src/assets/images/love-1137271.jpg";
+
+// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
+// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+---
+
+<Layout>
+  <Header />
+  <section
+    class=`relative w-full h-full bg-[url('/src/assets/images/love-1137271.jpg')] bg-cover`
+  >
+    <div
+      class="absolute w-full h-full top-0 left-0 opacity-[0.9]"
+      style="background: linear-gradient(to right, #000000 70%, hsla(0, 100%, 43%, 0.419));"
+    >
+    </div>
+    <div
+      class="relative flex w-full h-full max-w-[1024px] m-auto justify-between items-center gap-4"
+    >
+      <div class="flex flex-col gap-10">
+        <div class="heading flex flex-col gap-5">
+          <h1 class="text-5xl">Contáctanos</h1>
+          <div class="heading-info-container flex flex-col gap-2 max-w-[300px]">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima,
+              harum?
+            </p>
+            <a href="">info@fenix-escorts.com</a>
+            <a href="">3202001921</a>
+          </div>
+        </div>
+        <div class="flex gap-4">
+          <div class="flex flex-col max-w-[200px]">
+            <h2>Titulo 1</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore
+              sunt asperiores id porro odit totam modi corrupti praesentium
+              nisi?
+            </p>
+          </div>
+          <div class="flex flex-col max-w-[200px]">
+            <h2>Titulo 1</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore
+              sunt asperiores id porro odit totam modi corrupti praesentium
+              nisi?
+            </p>
+          </div>
+          <div class="flex flex-col max-w-[200px]">
+            <h2>Titulo 1</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore
+              sunt asperiores id porro odit totam modi corrupti praesentium
+              nisi?
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="flex flex-col gap-4 w-[400px]">
+        <div
+          class="w-full px-[20px] py-[30px] border"
+          style="background-color: rgba(17, 17, 17, 0.5);"
+        >
+          <div>
+            <h2 class="text-2xl">Ponte en contacto</h2>
+            <span class="">Escribenos en cualquier momento</span>
+          </div>
+          <div class="flex flex-col gap-4 mt-4">
+            <span class="input input--chisato">
+              <input
+                class="input__field input__field--chisato"
+                type="text"
+                id="input-13"
+                placeholder=""
+              />
+              <label class="input__label input__label--chisato" for="input-13">
+                <span
+                  class="input__label-content input__label-content--chisato"
+                  data-content="Nombre">Nombre</span
+                >
+              </label>
+            </span>
+            <span class="input input--chisato">
+              <input
+                class="input__field input__field--chisato"
+                type="text"
+                id="input-14"
+                placeholder=""
+              />
+              <label class="input__label input__label--chisato" for="input-14">
+                <span
+                  class="input__label-content input__label-content--chisato"
+                  data-content="Email">Email</span
+                >
+              </label>
+            </span>
+            <span class="input input--chisato">
+              <input
+                class="input__field input__field--chisato"
+                type="text"
+                id="input-15"
+                placeholder=""
+              />
+              <label class="input__label input__label--chisato" for="input-15">
+                <span
+                  class="input__label-content input__label-content--chisato"
+                  data-content="Teléfono">Teléfono</span
+                >
+              </label>
+            </span>
+            <span class="input input--chisato">
+              <textarea
+                class="input__field input__field--chisato"
+                id="textarea-1"
+                placeholder=""></textarea>
+              <label
+                class="input__label input__label--chisato"
+                for="textarea-1"
+              >
+                <span
+                  class="input__label-content input__label-content--chisato"
+                  data-content="Mensaje">Mensaje</span
+                >
+              </label>
+            </span>
+          </div>
+          <div class="flex flex-col items-center gap-2">
+            <div class="relative mt-4">
+              <a
+                class="btn btn-4 btn-4c border-[#FFF] text-[#111] bg-[#FFF] before:text-white hover:bg-[#dc0000] hover:text-white hover:border-[#dc0000] icon-arrow-right uppercase"
+                href="/fenix-escorts-web/escorts">Envíar</a
+              >
+            </div>
+            <div>
+              <p>Acepto los temrinos y condiciones</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <Footer />
+</Layout>

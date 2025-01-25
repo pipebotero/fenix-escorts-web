@@ -1,0 +1,52 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Lemon Milk";
+}
+
+.neon-text {
+    font-family: "Vibur", sans-serif;
+    text-shadow:
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 21px #fff,
+        0 0 42px #dc0000,
+        0 0 82px #dc0000,
+        0 0 92px #dc0000,
+        0 0 102px #dc0000,
+        0 0 151px #dc0000;
+    &--intermittent {
+        @extend .neon-text;
+        animation: flicker 1.5s infinite alternate;
+    }
+}
+
+/* Flickering animation */
+@keyframes flicker {
+    0%,
+    18%,
+    22%,
+    25%,
+    53%,
+    57%,
+    100% {
+        text-shadow:
+            0 0 4px #fff,
+            0 0 11px #fff,
+            0 0 19px #fff,
+            0 0 40px #be0b0b,
+            0 0 80px #be0b0b,
+            0 0 90px #be0b0b,
+            0 0 100px #be0b0b,
+            0 0 150px #be0b0b;
+    }
+
+    20%,
+    24%,
+    55% {
+        text-shadow: none;
+    }
+}

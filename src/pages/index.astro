@@ -1,0 +1,341 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import EscortsCarousel from "../components/EscortsCarousel.astro";
+import { Image } from 'astro:assets';
+import mosaicImage from "/src/assets/images/TREBOL-BLACK-01-F882151-01-32.webp";
+import homeVideo from "/src/assets/video/FINAL_BannerWebFenix_01.mp4";
+import girl1 from "/src/assets/girls/1.jpg";
+import "../styles/index.scss";
+// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
+// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+---
+
+<Layout>
+    <Header />
+    <div class="w-full h-screen relative">
+        <video class="w-full h-full object-cover" transition:name="home-video" transition:persist src={homeVideo} autoplay loop muted
+        ></video>
+        <div class="flex flex-col justify-center h-screen absolute top-0 p-10">
+            <h1 class="text-[48px] text-[#dc0000] uppercase">conoce</h1>
+            <h1 class="text-[40px] uppercase">nuestras</h1>
+            <div class="relative mt-4">
+                <a
+                    class="btn btn-4 btn-4c border-white text-white before:text-white hover:bg-[#dc0000] hover:text-white hover:border-[#dc0000] icon-arrow-right uppercase"
+                    href="/fenix-escorts-web/escorts">escorts</a
+                >
+            </div>
+        </div>
+    </div>
+    <section class="w-full py-20 mb-10">
+        <EscortsCarousel />
+    </section>
+
+    <section class={`float-left relative w-full py-20 bg-[url('/src/assets/images/TREBOL-BLACK-01-F882151-01-32.webp')] bg-repeat`}>
+        <div
+            class="absolute inset-x-0 inset-y-0 w-full h-full bg-gradient-to-r bg-[#000000] opacity-[0.8]"
+        >
+        </div>
+        <div
+            class="relative w-full mx-auto sm:max-w-[760px] md:max-w-[980px] lg:max-w-[1024px] lg:max-w-[1360px] xl:max-w-[1440px] 2xl:max-w-[1628px] sm:px-0 md:px-10 lg:px-162 xl:px-20 2xl:px-28"
+        >
+        <!-- style="box-shadow: 0 4px 20px 15px #000;" -->
+            <div
+                class="relative flex bg-[#111]"
+                style="box-shadow: 0 4px 20px 15px #000;"
+            >
+                <div class="relative p-8">
+                    <!-- neon-text--intermittent -->
+                    <h1 class="text-3xl text-white">Servicios</h1>
+                    <p class="mt-8 text-white font-['Satoshi']">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Blanditiis numquam magni temporibus qui inventore
+                        asperiores nulla assumenda, suscipit, consequatur
+                        necessitatibus nostrum! Magni aliquam earum deserunt
+                        delectus recusandae? Eveniet, sed iusto?
+                    </p>
+                    <div class="relative mt-10">
+                        <a
+                            class="btn btn-4 btn-4c border-[#111111] bg-white before:text-[#FFFFFF] text-black hover:bg-[#dc0000] hover:text-[#FFFFFF] icon-arrow-right uppercase"
+                            href="/fenix-escorts-web/our-services">SERVICIOS</a
+                        >
+                    </div>
+                </div>
+                <div class="relative p-8 ">
+                    <!-- class="neon-border" -->
+                    <Image  src={girl1} alt="Girl"/>
+                </div>
+            </div>
+            <div></div>
+        </div>
+    </section>
+
+    <!-- <section class="w-full py-20">
+        <div
+            class="relative float-left w-full h-[700px] bg-[url('/src/assets/images/TREBOL-BLACK-01-F882151-01-32.webp')] bg-repeat"
+        >
+            <div class="w-2/4 h-full p-0 float-left">
+                <img
+                    class="w-full h-full object-cover"
+                    src="/src/assets/girls/1.jpg"
+                    alt=""
+                />
+            </div>
+            <div
+                class="relative w-2/4 h-full p-8 float-left"
+            >
+                <div class="absolute inset-x-0 inset-y-0 w-full h-full bg-[#000000] opacity-[0.9]"></div>
+                <div class="relative inset-x-0 inset-y-0 w-full h-full">
+                    <h1 class="text-white text-3xl">FENIX ESCORTS</h1>
+                    <p class="mt-4 text-white">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Donec venenatis eros nibh. Aenean sit amet diam ac neque
+                        auctor semper a ut tellus. Nam posuere tincidunt nulla.
+                        Pellentesque et placerat elit. Cras accumsan quis ex at
+                        aliquet. Morbi vehicula lacus elit, vitae consequat nunc
+                        fringilla nec. Cras porta sed dolor in ornare. Mauris
+                        consequat ex mauris, ac efficitur magna scelerisque et.
+
+                        
+                    </p>
+                    <p class="mt-4 text-white">
+                        Donec euismod leo in egestas viverra. Sed porta nulla a
+                        aliquet consequat. Class aptent taciti sociosqu ad litora
+                        torquent per conubia nostra, per inceptos himenaeos. Sed
+                        ullamcorper venenatis rutrum. Quisque vel metus orci. Sed
+                        tempus felis eget orci finibus, a facilisis massa maximus.
+                        Phasellus consectetur at tellus vitae tristique. Sed a
+                        suscipit magna. Integer felis nisi, mattis at convallis sit
+                        amet, sagittis et lectus. Nunc vel justo tincidunt, vehicula
+                        ante et, bibendum velit.
+                    </p>
+                    <div class="relative mt-10 flex justify-center">
+                        <a
+                            class="btn btn-4 btn-4c border-white bg-white before:text-white text-black hover:bg-[#dc0000] hover:border-[#dc0000] hover:text-white icon-arrow-right uppercase"
+                            href="/fenix-escorts-web/about-us">Nosotros</a
+                        >
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <section class="float-left w-full py-20 mb-20">
+        <div class="float-left w-full divide-x divide-gray-700">
+            <div
+                class="float-left flex flex-col justify-center items-center w-2/4"
+            >
+                <h1 class="text-white text-3xl text-center">Se una Fenix</h1>
+                <div class="flex justify-center mt-8">
+                    <svg
+                        version="1.0"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="128.000000pt"
+                        height="128.000000pt"
+                        viewBox="0 0 128.000000 128.000000"
+                        preserveAspectRatio="xMidYMid meet"
+                    >
+                        <g
+                            transform="translate(0.000000,128.000000) scale(0.100000,-0.100000)"
+                            fill="#FFFFFF"
+                            stroke="none"
+                        >
+                            <path
+                                d="M286 1192 c-9 -15 -64 -242 -77 -322 -18 -106 -16 -306 4 -425 9 -55
+                                33 -155 52 -223 19 -68 35 -126 35 -128 0 -3 4 -3 9 0 5 3 -2 41 -15 83 -13
+                                43 -24 84 -24 90 0 23 60 46 104 40 27 -4 47 -1 60 9 23 16 77 19 92 4 6 -6
+                                21 -6 42 2 17 7 34 9 38 6 3 -4 -3 -51 -15 -105 -20 -94 -27 -152 -16 -141 3
+                                2 14 49 25 104 32 157 25 144 70 144 27 0 46 -6 57 -19 12 -14 24 -18 49 -14
+                                26 4 38 0 59 -21 19 -19 36 -26 65 -26 22 0 40 -2 40 -5 0 -3 -14 -35 -30 -72
+                                -46 -101 -30 -99 19 3 58 121 137 361 152 462 13 95 2 193 -36 321 -25 86 -92
+                                231 -106 231 -12 0 -11 -7 5 -33 8 -12 26 -48 40 -79 l26 -58 -88 -44 c-201
+                                -101 -343 -131 -497 -107 -114 19 -179 43 -183 69 -2 12 11 74 28 138 27 104
+                                33 143 16 116z m754 -274 c28 -105 36 -216 21 -303 -11 -60 -67 -253 -77 -264
+                                -2 -2 -12 3 -22 12 -10 10 -31 17 -45 17 -15 0 -36 9 -47 20 -12 12 -33 20
+                                -55 20 -21 0 -48 9 -65 21 -19 15 -38 20 -59 17 -37 -5 -37 -2 -12 83 10 35
+                                22 78 26 94 10 44 78 186 115 239 24 36 49 55 108 86 42 21 80 39 83 40 4 0
+                                17 -37 29 -82z m-719 -45 c65 -23 90 -26 204 -27 116 -1 138 2 205 26 41 14
+                                76 25 78 23 2 -2 -9 -22 -23 -46 -34 -53 -81 -157 -95 -209 -30 -110 -82 -88
+                                -206 87 -37 52 -69 91 -72 88 -8 -8 82 -137 142 -202 46 -50 58 -70 66 -113 6
+                                -29 10 -54 10 -55 0 -2 -16 2 -35 8 -25 7 -42 7 -59 -1 -15 -6 -46 -9 -75 -5
+                                -37 4 -57 1 -74 -10 -15 -10 -29 -12 -38 -6 -20 13 -50 11 -81 -5 -15 -8 -30
+                                -11 -32 -7 -15 24 -28 201 -23 311 6 125 13 170 26 170 4 0 41 -12 82 -27z
+                                m335 -360 l-10 -47 -9 38 c-7 29 -6 40 4 47 24 15 26 10 15 -38z m-156 -83 c8
+                                0 33 2 55 6 52 7 75 -10 68 -51 -4 -25 -12 -33 -43 -43 -27 -8 -47 -9 -68 -1
+                                -23 8 -38 7 -65 -5 -21 -8 -51 -12 -75 -9 -25 3 -50 0 -70 -11 -40 -21 -42
+                                -20 -42 8 0 34 24 40 200 51 84 5 119 10 126 18 15 15 -298 -10 -324 -27 -5
+                                -3 -12 1 -16 9 -9 25 38 48 87 42 28 -4 51 -1 67 9 15 8 37 12 55 9 17 -3 37
+                                -6 45 -5z m253 -10 c11 -15 21 -19 44 -14 23 4 36 0 60 -20 19 -16 37 -24 47
+                                -20 20 8 66 -21 66 -42 0 -12 -5 -14 -17 -9 -10 4 -31 10 -48 13 -16 3 -41 13
+                                -54 23 -13 11 -38 19 -55 19 -17 0 -40 7 -50 15 -22 17 -76 20 -76 5 0 -5 13
+                                -10 28 -10 15 0 33 -5 40 -12 7 -7 31 -13 53 -13 26 -1 46 -7 54 -18 7 -9 23
+                                -17 36 -17 26 0 69 -25 69 -41 0 -5 -19 -9 -43 -9 -30 0 -48 6 -60 20 -11 13
+                                -29 20 -54 20 -20 0 -44 7 -54 16 -10 9 -36 18 -58 21 -41 6 -41 6 -35 42 9
+                                50 10 51 54 51 28 0 43 -6 53 -20z"
+                            ></path>
+                            <path
+                                d="M555 1089 c8 -11 42 -12 49 -1 3 5 -8 9 -25 10 -16 0 -27 -4 -24 -9z"
+                            ></path>
+                        </g>
+                    </svg>
+                </div>
+                <div class="max-w-[300px] mt-4">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Donec venenatis eros nibh.
+                    </p>
+                </div>
+                <div class="relative flex justify-center mt-10">
+                    <a
+                        class="btn btn-4 btn-4c border-white before:text-[#dc0000] text-white hover:bg-[#111111] hover:text-[#dc0000] icon-arrow-right uppercase"
+                        href="/fenix-escorts-web/get-scouted">+18</a
+                    >
+                </div>
+            </div>
+            <div
+                class="float-left flex flex-col justify-center items-center w-2/4"
+            >
+                <h1 class="text-white text-3xl text-center">Escribenos</h1>
+                <div class="flex justify-center mt-8">
+                    <!--?xml version="1.0" standalone="no"?-->
+
+                    <svg
+                        version="1.0"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="128.000000pt"
+                        height="128.000000pt"
+                        viewBox="0 0 128.000000 128.000000"
+                        preserveAspectRatio="xMidYMid meet"
+                    >
+                        <g
+                            transform="translate(0.000000,128.000000) scale(0.100000,-0.100000)"
+                            fill="#FFFFFF"
+                            stroke="none"
+                        >
+                            <path
+                                d="M558 1149 c-35 -29 -93 -81 -130 -118 -74 -72 -84 -102 -50 -152 9
+                                -14 39 -58 65 -98 27 -40 51 -70 54 -68 7 8 -21 57 -70 122 -56 75 -63 99 -43
+                                130 19 29 196 185 210 185 15 0 66 -52 66 -67 0 -8 -23 -49 -51 -91 -57 -84
+                                -76 -107 -66 -79 8 23 -12 22 -40 -2 -28 -24 -30 -35 -3 -21 25 13 43 4 36
+                                -18 -3 -10 -10 -93 -15 -187 -11 -185 -17 -223 -64 -394 -27 -99 -35 -116 -64
+                                -138 -38 -29 -42 -48 -14 -63 48 -25 115 3 138 58 8 20 29 52 46 69 30 32 31
+                                33 18 82 -12 48 -12 51 33 154 50 113 66 197 58 290 l-5 58 54 47 c94 82 199
+                                193 199 213 0 10 -21 33 -47 53 -27 19 -59 44 -72 56 -30 25 -43 25 -66 0 -15
+                                -17 -21 -18 -34 -7 -14 12 -66 37 -76 37 -2 0 -32 -23 -67 -51z m112 16 c17
+                                -9 30 -21 30 -27 0 -9 -3 -9 -12 0 -7 7 -19 12 -27 12 -13 -1 -13 -2 2 -11 9
+                                -5 17 -17 17 -26 0 -12 -9 -8 -35 17 -48 46 -34 66 25 35z m117 -7 c4 -7 17
+                                -19 28 -26 11 -7 34 -22 52 -33 17 -11 34 -26 37 -34 10 -28 -11 -24 -45 8
+                                -44 42 -87 69 -102 64 -7 -2 6 -15 28 -30 62 -40 101 -74 93 -83 -4 -4 -18 1
+                                -30 10 -13 9 -46 32 -75 52 -51 35 -52 37 -36 60 17 26 38 31 50 12z m-2 -103
+                                c33 -25 61 -49 63 -53 2 -8 -18 -28 -151 -149 l-46 -42 0 -99 c0 -105 -11
+                                -148 -76 -301 -18 -43 -25 -72 -20 -90 3 -14 9 -36 12 -49 4 -17 0 -28 -16
+                                -38 -12 -9 -33 -38 -47 -65 -27 -55 -58 -75 -100 -65 l-28 7 31 24 c38 30 44
+                                46 88 218 32 127 55 325 55 484 0 23 21 64 77 147 42 64 82 116 87 116 6 0 38
+                                -20 71 -45z"
+                            ></path>
+                            <path
+                                d="M676 551 c-3 -5 8 -14 24 -20 35 -12 36 -16 14 -60 -13 -26 -14 -38
+                                -5 -57 14 -32 14 -57 -1 -89 -16 -36 -28 -31 -28 11 0 40 -27 94 -47 94 -9 0
+                                -7 -10 7 -32 11 -18 20 -44 20 -58 1 -82 39 -96 66 -24 14 38 16 53 7 87 -9
+                                33 -8 47 3 69 21 40 17 56 -16 73 -34 18 -37 18 -44 6z"
+                            ></path>
+                        </g>
+                    </svg>
+                </div>
+                <div class="max-w-[300px] mt-4">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Donec venenatis eros nibh.
+                    </p>
+                </div>
+                <div class="relative flex justify-center mt-10">
+                    <a
+                        class="btn btn-4 btn-4c border-white before:text-[#dc0000] text-white hover:bg-[#111111] hover:text-[#dc0000] icon-arrow-right uppercase"
+                        href="/fenix-escorts-web/contact-us">Contactar</a
+                    >
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="float-left w-full py-20">
+        <div class="w-full h-[600px] float-left bg-white">
+            <div class="w-2/4 p-0 h-full float-left">
+                <Image class="w-full h-full object-cover" src={girl1} alt="Girl"/>
+            </div>
+            <div class="w-2/4 h-full p-8 float-left">
+                <h1 class="text-black text-3xl text-center">
+                    FENIX ESCORTS
+                </h1>
+                <p class="mt-8 text-black">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Donec venenatis eros nibh. Aenean sit amet diam ac neque
+                    auctor semper a ut tellus. Nam posuere tincidunt nulla.
+                    Pellentesque et placerat elit. Cras accumsan quis ex at
+                    aliquet. Morbi vehicula lacus elit, vitae consequat nunc
+                    fringilla nec. Cras porta sed dolor in ornare. Mauris
+                    consequat ex mauris, ac efficitur magna scelerisque et.
+                </p>
+                <p class="mt-4 text-black">
+                    Donec euismod leo in egestas viverra. Sed porta nulla a
+                    aliquet consequat. Class aptent taciti sociosqu ad litora
+                    torquent per conubia nostra, per inceptos himenaeos. Sed
+                    ullamcorper venenatis rutrum. Quisque vel metus orci. Sed
+                    tempus felis eget orci finibus, a facilisis massa maximus.
+                    Phasellus consectetur at tellus vitae tristique. Sed a
+                    suscipit magna. Integer felis nisi, mattis at convallis sit
+                    amet, sagittis et lectus. Nunc vel justo tincidunt, vehicula
+                    ante et, bibendum velit.
+                </p>
+                <div class="relative flex justify-center mt-10">
+                    <a
+                        class="btn btn-4 btn-4c border-[#111111] before:text-[#dc0000] text-black hover:bg-[#111111] hover:text-[#dc0000] icon-arrow-right uppercase"
+                        href="/fenix-escorts-web/about-us">NOSOTROS</a
+                    >
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+
+    <!-- <section class={`float-left relative w-full py-20 bg-[url('/src/assets/images/TREBOL-BLACK-01-F882151-01-32.webp')] bg-repeat`}>
+        <div
+            class="absolute inset-x-0 inset-y-0 w-full h-full bg-gradient-to-r bg-[#000000] opacity-[0.9]"
+        >
+        </div>
+        <div
+            class="relative w-full mx-auto sm:max-w-[760px] md:max-w-[980px] lg:max-w-[1024px] lg:max-w-[1360px] xl:max-w-[1440px] 2xl:max-w-[1628px] sm:px-0 md:px-10 lg:px-162 xl:px-20 2xl:px-28"
+        >
+            <div
+                class="relative flex bg-white"
+                style="box-shadow: 0 4px 20px 15px #000;"
+            >
+                <div class="relative p-8">
+                    <h1 class="text-black text-3xl">FENIX ESCORTS</h1>
+                    <p class="mt-8 text-black font-['Satoshi']">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Blanditiis numquam magni temporibus qui inventore
+                        asperiores nulla assumenda, suscipit, consequatur
+                        necessitatibus nostrum! Magni aliquam earum deserunt
+                        delectus recusandae? Eveniet, sed iusto?
+                    </p>
+                    <div class="relative mt-10">
+                        <a
+                            class="btn btn-4 btn-4c border-[#111111] bg-white before:text-[#dc0000] text-black hover:bg-[#111111] hover:text-[#dc0000] icon-arrow-right uppercase"
+                            href="/fenix-escorts-web/about-us">Nosotros</a
+                        >
+                    </div>
+                </div>
+                <div class="relative p-8">
+                    <Image src={girl1} alt="Girl"/>
+                </div>
+            </div>
+            <div></div>
+        </div>
+    </section> -->
+    
+
+    <Footer />
+</Layout>

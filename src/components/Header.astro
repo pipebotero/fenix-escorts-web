@@ -1,0 +1,185 @@
+<header class="nav-header fixed-top flex justify-between items-center w-full h-[80px] px-20">
+    <!-- style="border: 1px solid red" -->
+    <nav class="">
+        <a
+            class="block w-[200px] h-[80px] bg-contain bg-no-repeat bg-[url('/src/assets/logo/LOGO_H-FENIX_ESCORTS.png')]"
+            href="/fenix-escorts-web/"></a>
+    </nav>
+    <nav class="">
+        <ul class="flex gap-7">
+            <li>
+                <a href="/fenix-escorts-web/escorts">Escorts</a>
+            </li>
+            <li>
+                <a href="/fenix-escorts-web/our-services">Servicios</a>
+            </li>
+            <li>
+                <a href="/fenix-escorts-web/contact-us">Contacto</a>
+            </li>
+            <li>
+                <a href="/fenix-escorts-web/get-scouted">Se Fenix</a>
+            </li>
+            <li>
+                <a href="/fenix-escorts-web/about-us">Nosotros</a>
+            </li>
+            <!-- <li>
+                <a href="/fenix-escorts-web/idiomas">Idiomas</a>
+            </li> -->
+        </ul>
+    </nav>
+</header>
+
+<script>
+    (function() {
+        var navHeader: HTMLElement | null = document.querySelector(".nav-header");
+        console.log('navHeader', navHeader);
+
+        bindListeners();
+
+        function bindListeners() {
+            var e = window.scrollY;
+            window.onscroll= function() {
+                navHeader = document.querySelector(".nav-header");
+                var t = window.scrollY;
+                console.log({t});
+                if(t < 0) t = 0;
+                if(e < 0) e = 0;
+                if(e >= t) {
+                    console.log('dropdown-active');
+                    console.log(navHeader);
+                    navHeader?.classList.add("dropdown-active");
+                    navHeader!.style.top = "0px";
+                } else {
+                    console.log('NOO dropdown-active');
+                    navHeader?.classList.remove("dropdown-active");
+                    navHeader!.style.top = "-109px";
+                }
+                if(0 == window.scrollY ) navHeader?.classList.remove("dropdown-active");
+                e = t;
+            };
+        }
+
+        // function t() {
+        //     navHeader = document.querySelector(".nav-header"),
+        //     navHeader && (this.toggles = [].concat(I(navHeader.querySelectorAll('[data-toggle="collapse"]'))),
+        //     this.noToggles = [].concat(I(this.navHeader.querySelectorAll(".no-toggle"))),
+        //     !this.toggles.length) || (this.mobileMenu = document.querySelector(".mobile-nav-button"),
+        //     this.mobileMenuHeight = 0,
+        //     this.displaySize = document.body.dataset.displaySize,
+        //     this.flagElement = !1,
+        //     this.objects,
+        //     bindListeners(),
+        //     setUpMenuHeight())
+
+        //     function bindListeners() {
+        //         console.log('bindListeners');
+        //         var t = this, e = window.pageYOffset;
+        //         document.querySelector(window).scroll(function() {
+        //             var t = window.pageYOffset;
+        //             t < 0 && (t = 0),
+        //             e < 0 && (e = 0),
+        //             e >= t ? document.querySelector(".nav-header").css("top", "0px").addClass("dropdown-active") : document.querySelector(".nav-header").css("top", "-109px").removeClass("dropdown-active"),
+        //             0 == window.scrollY && document.querySelector(".nav-header").removeClass("dropdown-active"),
+        //             e = t
+        //         }),
+        //         this.noToggles && this.noToggles.forEach(function(t) {
+        //             t.addEventListener("mouseenter", function() {
+        //                 var t = document.querySelector(".collapse.show, .collapsing");
+        //                 t.length && t.each(function(t, e) {
+        //                     document.querySelector(e).collapse("hide")
+        //                 })
+        //             })
+        //         }),
+        //         this.toggles && this.toggles.forEach(function(e) {
+        //             e.addEventListener("mouseenter", function() {
+        //                 "true" !== e.getAttribute("aria-expanded") && e.click()
+        //             }),
+        //             e.addEventListener("click", function(e) {
+        //                 -1 === ["xs", "sm"].indexOf(t.displaySize) && (t.collapseLogic(e),
+        //                 t.updateHeader(e))
+        //             })
+        //         }),
+        //         this.mobileMenu && this.mobileMenu.addEventListener("click", function() {
+        //             document.querySelector(".nav-header").classList.toggle("mobile-nav-active"),
+        //             document.body.classList.toggle("disable-scroll")
+        //         }),
+        //         this.navHeader && this.navHeader.addEventListener("mouseleave", function() {
+        //             0 == window.scrollY && t.navHeader.classList.remove("dropdown-active"),
+        //             document.querySelector(".collapse.show, .collapsing").each(function(t, e) {
+        //                 document.querySelector(e).collapse("hide")
+        //             })
+        //         }),
+        //         window.addEventListener("WindowScroll", function() {
+        //             return t.watchBackground()
+        //         }),
+        //         window.addEventListener("CssLoaded", function() {
+        //             return t.watchBackground()
+        //         }),
+        //         window.addEventListener("DisplayChange", function(e) {
+        //             t.displaySize = e.detail,
+        //             t.mobileMenu = document.querySelector(".mobile-nav-button"),
+        //             t.setUpMenuHeight()
+        //         })
+        //     }
+
+        //     function collapseLogic(t) {
+        //         var e = this.navHeader.querySelector(".collapse.show")
+        //         , n = t.currentTarget.getAttribute("href").substr(1);
+        //         if (null !== e && !e.classList.contains(n)) {
+        //             t.preventDefault(),
+        //             t.stopPropagation();
+        //             var r = document.querySelector("." + n)
+        //             , i = t.currentTarget.parentNode.parentNode.querySelector("[aria-expanded=true]").getAttribute("href")
+        //             , o = document.querySelector(i);
+        //             r.addClass("fade").collapse("show").one("shown.bs.collapse", function() {
+        //                 r.removeClass("fade")
+        //             }),
+        //             o.addClass("fade").collapse("hide").one("hidden.bs.collapse", function() {
+        //                 o.removeClass("fade")
+        //             })
+        //         }
+        //     }
+
+        //     function setUpMenuHeight() {
+        //         void 0 !== this.mobileMenu ? this.navHeader && (this.mobileMenuHeight = parseInt(window.getComputedStyle(this.mobileMenu).height, 10)) : this.mobileMenuHeight = 0
+        //     }
+            
+        //     function updateHeader(t) {
+        //         var e = this
+        //           , n = t.currentTarget;
+        //         setTimeout(function() {
+        //             "false" === n.getAttribute("aria-expanded") ? e.navHeader.classList.remove("dropdown-active") : e.navHeader.classList.add("dropdown-active")
+        //         }, 100)
+        //     }
+        // }
+        // t();
+    }());
+</script>
+
+<style>
+    .nav-header {
+        top: 0;
+        width: 100%;
+        z-index: 3;
+        -webkit-transition: background .3s ease, top .6s;
+        transition: background .3s ease, top .6s;
+    }
+    .fixed-top {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 1030;
+    }
+    .nav-header.dropdown-active, .nav-header:hover {
+        background: rgb(17, 17, 17);
+    }
+    @media (min-width: 1025px) {
+        .nav-header {
+            background: rgba(255, 255, 255, 0);
+        }
+        .nav-header.dropdown-active, .nav-header:hover {
+            background: rgb(17, 17, 17);
+        }
+    }
+</style>

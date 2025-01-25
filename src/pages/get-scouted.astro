@@ -1,0 +1,246 @@
+---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Escorts from "../components/Escorts.astro";
+import Layout from "../layouts/Layout.astro";
+import homeVideo from "/src/assets/video/FINAL_BannerWebFenix_01.mp4";
+
+import "../styles/index.scss";
+---
+
+<Layout>
+  <Header />
+  <div class="w-full h-screen relative">
+    <video
+      class="w-full h-full object-cover"
+      transition:name="home-video"
+      transition:persist
+      src={homeVideo}
+      autoplay
+      loop
+      muted></video>
+    <!-- <div class="flex flex-col justify-center h-screen absolute top-0 p-10">
+            <h1 class="text-[48px] text-[#dc0000] uppercase">conoce</h1>
+            <h1 class="text-[40px] uppercase">nuestras</h1>
+            <div class="relative mt-4">
+                <a
+                    class="btn btn-4 btn-4c border-white text-white before:text-white hover:bg-[#dc0000] hover:text-white hover:border-[#dc0000] icon-arrow-right uppercase"
+                    href="/fenix-escorts-web/escorts">escorts</a
+                >
+            </div>
+        </div> -->
+  </div>
+  <section class="w-full py-20 mb-10">
+    <div
+      class="flex flex-col justify-center items-center w-full max-w-[1024px] m-auto gap-4"
+    >
+      <div class="flex flex-col gap-4">
+        <h1 class="text-4xl">Unete a Fenix Escorts</h1>
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse eius
+          reiciendis sed impedit aliquam odit, numquam, deleniti ipsam quis
+          possimus fuga velit nobis temporibus quaerat id itaque cum corporis
+          maxime?
+        </p>
+      </div>
+      <div class="flex w-full flex-col mt-6">
+        <div
+          class="w-full grid grid-cols-[repeat(2,1fr)] gap-x-[40px] gap-y-[20px]"
+        >
+          <span class="input input--chisato">
+            <input
+              class="input__field input__field--chisato"
+              type="text"
+              id="input-1"
+              placeholder=""
+            />
+            <label class="input__label input__label--chisato" for="input-1">
+              <span
+                class="input__label-content input__label-content--chisato"
+                data-content="Nombre">Nombre</span
+              >
+            </label>
+          </span>
+          <span class="input input--chisato">
+            <input
+              class="input__field input__field--chisato"
+              type="text"
+              id="input-2"
+              placeholder=""
+            />
+            <label class="input__label input__label--chisato" for="input-2">
+              <span
+                class="input__label-content input__label-content--chisato"
+                data-content="Email">Email</span
+              >
+            </label>
+          </span>
+          <span class="input input--chisato">
+            <input
+              class="input__field input__field--chisato"
+              type="text"
+              id="input-3"
+              placeholder=""
+            />
+            <label class="input__label input__label--chisato" for="input-3">
+              <span
+                class="input__label-content input__label-content--chisato"
+                data-content="Teléfono">Teléfono</span
+              >
+            </label>
+          </span>
+          <span class="input input--chisato">
+            <input
+              class="input__field input__field--chisato"
+              type="text"
+              id="input-4"
+              placeholder=""
+            />
+            <label class="input__label input__label--chisato" for="input-4">
+              <span
+                class="input__label-content input__label-content--chisato"
+                data-content="Instagram">Instagram</span
+              >
+            </label>
+          </span>
+        </div>
+      </div>
+      <div class="flex flex-col gap-4 mt-10">
+        <h1 class="text-4xl">Sube fotos tuyas</h1>
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse eius
+          reiciendis sed impedit aliquam odit, numquam, deleniti ipsam quis
+          possimus fuga velit nobis temporibus quaerat id itaque cum corporis
+          maxime?
+        </p>
+      </div>
+      <div
+        class="grid-cols-1 grid lg:grid-cols-3 mt-[51px] overflow-hidden gap-[45px]"
+      >
+        <div class="relative">
+          <p class="absolute text-red-500 z-[3030303030] bottom-[45px] hidden">
+            We do not support this image type
+          </p><p
+            class="absolute text-red-500 z-[3030303030] bottom-[45px] hidden"
+          >
+            Images cannot be over 30 MB
+          </p><input
+            class="hidden"
+            id="1"
+            accept=".webp, .png, .jpeg, .avif, .tiff, .heic, .jpg"
+            type="file"
+            name="1"
+          /><label
+            for="1"
+            class="flex aspect-square lg:aspect-[3/4] w-full flex-col cursor-pointer"
+            ><div class="w-full h-full cursor-pointer relative">
+              <img
+                src="/src/assets/girls/1.jpg"
+                alt="upload head shot"
+                class="w-full h-full object-cover object-top"
+              /><div
+                class="top-0 left-0 absolute w-[37px] h-[37px] bg-white border-gray-400 border-[1px] grid place-items-center text-[#111]"
+              >
+                1
+              </div>
+            </div><div
+              class="flex uppercase justify-center items-center gap-[5px] pt-[51px]"
+            >
+              <p class="underline font-[700] uppercase">Foto de frente</p><img
+                src="/src/assets/icons/upload.png"
+                width="20px"
+                alt="upload"
+              />
+            </div></label
+          >
+        </div><div class="relative">
+          <p class="absolute text-red-500 z-[3030303030] bottom-[45px] hidden">
+            We do not support this image type
+          </p><p
+            class="absolute text-red-500 z-[3030303030] bottom-[45px] hidden"
+          >
+            Images cannot be over 30 MB
+          </p><input
+            class="hidden"
+            id="2"
+            accept=".webp, .png, .jpeg, .avif, .tiff, .heic, .jpg"
+            type="file"
+            name="2"
+          /><label
+            for="2"
+            class="flex aspect-square lg:aspect-[3/4] w-full flex-col cursor-pointer"
+            ><div class="w-full h-full cursor-pointer relative">
+              <img
+                src="/src/assets/girls/1.jpg"
+                alt="upload profile"
+                class="w-full h-full object-cover object-top"
+              /><div
+                class="top-0 left-0 absolute w-[37px] h-[37px] bg-white border-gray-400 border-[1px] grid place-items-center text-[#111]"
+              >
+                2
+              </div>
+            </div><div
+              class="flex uppercase justify-center items-center gap-[5px] pt-[51px]"
+            >
+              <p class="underline font-[700] uppercase">Foto de perfil</p><img
+                src="/src/assets/icons/upload.png"
+                width="20px"
+                alt="upload"
+              />
+            </div></label
+          >
+        </div><div class="relative">
+          <p class="absolute text-red-500 z-[3030303030] bottom-[45px] hidden">
+            We do not support this image type
+          </p><p
+            class="absolute text-red-500 z-[3030303030] bottom-[45px] hidden"
+          >
+            Images cannot be over 30 MB
+          </p><input
+            class="hidden"
+            id="3"
+            accept=".webp, .png, .jpeg, .avif, .tiff, .heic, .jpg"
+            type="file"
+            name="3"
+          /><label
+            for="3"
+            class="flex aspect-square lg:aspect-[3/4] w-full flex-col cursor-pointer"
+            ><div class="w-full h-full cursor-pointer relative">
+              <img
+                src="/src/assets/girls/1.jpg"
+                alt="upload full length"
+                class="w-full h-full object-cover object-top"
+              /><div
+                class="top-0 left-0 absolute w-[37px] h-[37px] bg-white border-gray-400 border-[1px] grid place-items-center text-[#111]"
+              >
+                3
+              </div>
+            </div><div
+              class="flex uppercase justify-center items-center gap-[5px] pt-[51px]"
+            >
+              <p class="underline font-[700] uppercase">
+                Foto de cuerpo completo
+              </p><img
+                src="/src/assets/icons/upload.png"
+                width="20px"
+                alt="upload"
+              />
+            </div></label
+          >
+        </div>
+      </div>
+      <div
+        class="w-full cursor-pointer mt-[62px] lg:mt-[92px] mb-[0px] h-[55px] bg-[#dc0000] text-center lg::h-[78px] grid place-items-center"
+      >
+        <button
+          type="submit"
+          form="modelForm"
+          class="text-white text-center flex items-center justify-center text-[18px] lg:text-[24px] uppercase"
+        >
+          Enviar</button>
+      </div>
+	  <p class="mt-[30px]">Safety remains our number one priority and protecting models and aspiring models from online predators is of the utmost importance. Please do not respond to anyone claiming to be affiliated with IMG Models without alerting an adult and verifying their identity first. IMG Models never asks for photos in the nude or lingerie and does not require any kind of monetary payment. Please don’t hesitate to contact us if something doesn’t feel right.</p>
+    </div>
+  </section>
+  <Footer />
+</Layout>

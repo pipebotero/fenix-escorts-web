@@ -1,0 +1,93 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Layout from '../layouts/Layout.astro';
+import homeVideo from "/src/assets/video/FINAL_BannerWebFenix_01.mp4";
+
+import massageIcon from "/src/assets/icons/massage-color.png";
+import escortIcon from "/src/assets/icons/wine-glasses-color.png";
+import mouthIcon from "/src/assets/icons/mouth-color.png";
+import grapeIcon from "/src/assets/icons/grape-color.png";
+import sadoIcon from "/src/assets/icons/sado-color.png";
+import partysIcon from "/src/assets/icons/partys-color.png";
+
+
+import '../styles/index.scss';
+import { imageConfig } from 'astro:assets';
+
+// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
+// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+---
+
+<Layout>
+	<Header />
+	<div class="relative top-[120px] w-full relative py-20">
+        <div class="w-full flex justify-center items-center">
+			<h1 class="text-7xl text-[#fff] neon-text">Nuestros Servicios</h1>
+		</div>
+    </div>
+	<section class="w-full relative mt-10 py-20">
+        <div class="services-container grid">
+			<div class="flex flex-col items-start gap-4 service-box">
+				<img src={massageIcon.src} alt="" width="64">
+				<div class="flex flex-col items-start gap-2">
+					<h2>Masajes eróticos</h2>
+					<p class="">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit ab magnam ipsum ratione facilis?</p>
+				</div>
+			</div>
+			<div class="flex flex-col items-start gap-4 service-box">
+				<img src={mouthIcon.src} alt="" width="64">
+				<div class="flex flex-col items-start gap-2">
+					<h2>Fantasías Sexuales</h2>
+					<p class="">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit ab magnam ipsum ratione facilis?</p>
+				</div>
+			</div>
+			<div class="flex flex-col items-start gap-4 service-box">
+				<img src={partysIcon.src} alt="" width="64">
+				<div class="flex flex-col items-start gap-2">
+					<h2>Fiestas privadas</h2>
+					<p class="">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit ab magnam ipsum ratione facilis?</p>
+				</div>
+			</div>
+			<div class="flex flex-col items-start gap-4 service-box">
+				<img src={grapeIcon.src} alt="" width="64">
+				<div class="flex flex-col items-start gap-2">
+					<h2>Orgías</h2>
+					<p class="">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit ab magnam ipsum ratione facilis?</p>
+				</div>
+			</div>
+			<div class="flex flex-col items-start gap-4 service-box">
+				<img src={sadoIcon.src} alt="" width="64">
+				<div class="flex flex-col items-start gap-2">
+					<h2>Sado Ama</h2>
+					<p class="">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit ab magnam ipsum ratione facilis?</p>
+				</div>
+			</div>
+			<div class="flex flex-col items-start gap-4 service-box">
+				<img src={escortIcon.src} alt="" width="64">
+				<div class="flex flex-col items-start gap-2">
+					<h2>Acompañante</h2>
+					<p class="">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit ab magnam ipsum ratione facilis?</p>
+				</div>
+			</div>
+		</div>
+    </section>
+
+	<Footer />
+</Layout>
+
+<style>
+	.services-container {
+		max-width: 1024px;
+		margin: auto;
+		grid-template-columns: repeat(3, 1fr);
+		column-gap: 20px;
+		row-gap: 20px;
+	}
+	.service-box {
+		border-radius: 4px;
+		padding: 30px;
+		background-color: #222;
+		color: #FFF;
+	}
+</style>

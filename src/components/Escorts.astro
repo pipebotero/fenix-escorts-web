@@ -1,0 +1,142 @@
+---
+import girl1 from "/src/assets/girls/1.jpg";
+import girl2 from "/src/assets/girls/2.jpg";
+import girl3 from "/src/assets/girls/3.jpg";
+
+const baseUrl = "/fenix-escorts-web/escorts/";
+
+let escorts = [
+    {
+        id: 1,
+        name: "Aria Mesa",
+        image: girl1.src,
+    },
+    {
+        id: 2,
+        name: "Dora",
+        image: girl2.src,
+    },
+    {
+        id: 3,
+        name: "Caitlyn",
+        image: girl3.src,
+    },
+    {
+        id: 4,
+        name: "Aria Mesa",
+        image: girl1.src,
+    },
+    {
+        id: 5,
+        name: "Dora",
+        image: girl2.src,
+    },
+    {
+        id: 6,
+        name: "Caitlyn",
+        image: girl3.src,
+    },
+    {
+        id: 7,
+        name: "Aria Mesa",
+        image: girl1.src,
+    },
+    {
+        id: 8,
+        name: "Dora",
+        image: girl2.src,
+    },
+    {
+        id: 9,
+        name: "Caitlyn",
+        image: girl3.src,
+    },
+    {
+        id: 10,
+        name: "Aria Mesa",
+        image: girl1.src,
+    },
+    {
+        id: 11,
+        name: "Dora",
+        image: girl2.src,
+    },
+    {
+        id: 12,
+        name: "Caitlyn",
+        image: girl3.src,
+    },
+];
+const getUrl = (id) => {
+    return `${baseUrl}${id}`;
+};
+const nameFormat = (name) => {
+    return name.indexOf(" ") >= 0 ? name.replace(" ", "<br>") : name;
+};
+---
+
+
+<div class="max-w-[90vw] min-h-[80vh] w-full mx-auto pt-8">
+    <div
+        class="mt-2 lg:-mt-[0.6rem] pb-10 grid grid-cols-2 gap-x-[2.5rem] md:gap-x-[4.6vw] xl:gap-x-[4.1vw] 2xl:gap-x-[3.8vw] xxl:gap-x-[3vw] sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 xxl:grid-cols-6 xxxl:grid-cols-7 xxxxl:grid-cols-8 gap-y-[2rem] lg:gap-y-[4.4rem]"
+    >
+        {
+            escorts.map((escort) => (
+                <div class="flex flex-col items-center aspect-[3/4] origin-top-left ease-in-out duration-[250ms] transition hover:scale-[1.1] cursor-pointer">
+                    <a
+                        class="list-item-anchor w-full transition aspect-[3/4] overflow-hidden relative"
+                        href={getUrl(escort.id)}
+                    >
+                        <img
+                            transition:name={`img-${escort.id}`}
+                            class="list-item-overlay-img w-full h-full object-cover"
+                            src={escort.image}
+                            alt=""
+                        />
+                        <div class="list-item-overlay-container absolute w-full h-full top-0 left-0 opacity-0">
+                            <div class="top-0 left-0 text-[12px] 2xl:text-[14px] flex flex-col items-center justify-center w-full h-full cursor-pointer bg-[rgba(0,0,0,0.6)]">
+                                <p class="text-center opacity-100 font-light text-white uppercase flex gap-[15px] items-center">
+                                    Altura{" "}
+                                    <span class="font-medium">179CM</span>
+                                </p>
+                                <p class="text-center opacity-100 font-light text-white uppercase flex gap-[15px] items-center">
+                                    Cabello{" "}
+                                    <span class="font-medium">Negro</span>
+                                </p>
+                                <p class="text-center opacity-100 font-light text-white uppercase flex gap-[15px] items-center">
+                                    Ojos <span class="font-medium">Azules</span>
+                                </p>
+                                <p class="text-center opacity-100 font-light text-white uppercase flex gap-[15px] items-center">
+                                    Busto<span class="font-medium">32½''</span>{" "}
+                                </p>
+                                <p class="text-center opacity-100 font-light text-white uppercase flex gap-[15px] items-center">
+                                    Cola<span class="font-medium">L</span>{" "}
+                                </p>
+                                
+                            </div>
+                        </div>
+                    </a>
+                    <div class="pt-3 pb-1">
+                        <p class="text-[9px] md:text-[11px] py-2  lg:text-[12px] xl:text-[14px] 2xl:text-[18px] 2xl:leading-5 cursor-pointer  m-auto font-futura text-[#72726D] font-normal flex justify-center text-center uppercase tracking-[2.4px]">
+                            {escort.name}
+                        </p>
+                    </div>
+                </div>
+            ))
+        }
+        <!-- <Fragment set:html={html} /> -->
+    </div>
+</div>
+
+<style lang="scss">
+    .list-item-overlay-img {
+        transition: 0.5s;
+        backface-visibility: hidden;
+    }
+    .list-item-overlay-container {
+        transition: 0.5s;
+    }
+    .list-item-anchor:hover .list-item-overlay-container {
+        opacity: 1;
+    }
+</style>
