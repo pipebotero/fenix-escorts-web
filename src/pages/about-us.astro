@@ -3,6 +3,8 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import Escorts from '../components/Escorts.astro';
 import Layout from '../layouts/Layout.astro';
+import homeVideo from "/src/assets/video/FINAL_BannerWebFenix_01.mp4";
+
 import '../styles/index.scss';
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
@@ -11,8 +13,22 @@ import '../styles/index.scss';
 
 <Layout>
 	<Header />
-	<div class="mt-[90px]">
-		<Escorts />
-	</div>
+	<div class="w-full h-screen relative">
+        <video class="w-full h-full object-cover" transition:name="home-video" transition:persist src={homeVideo} autoplay loop muted
+        ></video>
+        <!-- <div class="flex flex-col justify-center h-screen absolute top-0 p-10">
+            <h1 class="text-[48px] text-[#dc0000] uppercase">conoce</h1>
+            <h1 class="text-[40px] uppercase">nuestras</h1>
+            <div class="relative mt-4">
+                <a
+                    class="btn btn-4 btn-4c border-white text-white before:text-white hover:bg-[#dc0000] hover:text-white hover:border-[#dc0000] icon-arrow-right uppercase"
+                    href="/fenix-escorts-web/escorts">escorts</a
+                >
+            </div>
+        </div> -->
+    </div>
+	<section class="w-full py-20 mb-10">
+        
+    </section>
 	<Footer />
 </Layout>
