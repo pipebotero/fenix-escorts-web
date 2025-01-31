@@ -361,6 +361,9 @@ const { height, hair, eyes, tits, ass } = {
   <Footer />
 </Layout>
 <script>
+  import prevIcon from "/src/assets/icons/prev.svg";
+  import nextIcon from "/src/assets/icons/next.svg";
+
   document.addEventListener("mousemove", function (e) {
     isMouseInBox(e);
   });
@@ -431,7 +434,6 @@ const { height, hair, eyes, tits, ass } = {
       }
       //   console.log(slickTrack!.style.transform.);
       // transform: translate3d(-1905px, 0px, 0px);
-      console.log({ numChilds });
     });
   }
 
@@ -453,6 +455,9 @@ const { height, hair, eyes, tits, ass } = {
   //         , t = e.clientX - window.innerWidth / 2;
   //     l && (t < 0 ? l.style.cursor = 'url("/icons/prev.svg"), auto' : t > 0 ? l.style.cursor = 'url("/icons/next.svg"), auto' : l.style.cursor = "default")
   // }
+
+  
+
   function isMouseInBox(event: any) {
     let portfolioSection: HTMLElement | null =
       document.querySelector("#portfolioSection");
@@ -460,14 +465,11 @@ const { height, hair, eyes, tits, ass } = {
     if (portfolioSection === null) return;
     cursorPos < 0
       ? (portfolioSection!.style.cursor =
-          'url("/src/assets/icons/prev.svg"), auto')
+          `url("${prevIcon.src}"), auto`)
       : cursorPos > 0
         ? (portfolioSection!.style.cursor =
-            'url("/src/assets/icons/next.svg"), auto')
+            `url("${nextIcon.src}"), auto`)
         : (portfolioSection!.style.cursor = "default");
-    // if(cursorPos > 0) {
-    //     portfolioSection.style.cursor = 'url("/src/assets/icons/next.svg"), auto';
-    // }
   }
   transitionImgGallery();
   document.addEventListener("astro:after-swap", transitionImgGallery);
