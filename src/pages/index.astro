@@ -2,11 +2,14 @@
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+// import VideoBanner from "../components/VideoBanner.astro"
+import VideoBanner from "../components/VideoBanner.svelte"
 import EscortsCarousel from "../components/EscortsCarousel.astro";
 import { Image } from 'astro:assets';
 import mosaicImage from "/src/assets/images/TREBOL-BLACK-01-F882151-01-32.webp";
 import homeVideo from "/src/assets/video/FINAL_BannerWebFenix_01.mp4";
 import girl1 from "/src/assets/girls/1.jpg";
+import logoNoLetters from "/src/assets/logo/logo-no-letters.png";
 import "../styles/index.scss";
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
@@ -14,112 +17,24 @@ import "../styles/index.scss";
 
 <Layout>
     <Header />
-    <div class="w-full h-screen relative">
-        <video class="w-full h-full object-cover" transition:name="home-video" transition:persist src={homeVideo} autoplay loop muted
-        ></video>
-        <div class="flex flex-col justify-center h-screen absolute top-0 p-10">
-            <h1 class="text-[48px] text-[#dc0000] uppercase">conoce</h1>
-            <h1 class="text-[40px] uppercase">nuestras</h1>
-            <div class="relative mt-4">
-                <a
-                    class="btn btn-4 btn-4c border-white text-white before:text-white hover:bg-[#dc0000] hover:text-white hover:border-[#dc0000] icon-arrow-right uppercase"
-                    href="/escorts">escorts</a
-                >
-            </div>
-        </div>
-    </div>
+    <VideoBanner client:load/>
     <section class="w-full py-20 mb-10">
         <EscortsCarousel />
     </section>
 
-    <section class={`float-left relative w-full py-20 bg-[url('/src/assets/images/TREBOL-BLACK-01-F882151-01-32.webp')] bg-repeat`}>
+    <section class={`float-left relative w-full h-screen py-20 bg-[url('/src/assets/images/FOTO_BANNER_SERVICIOS_FENIX.png')] bg-cover bg-no-repeat`}>
         <div
-            class="absolute inset-x-0 inset-y-0 w-full h-full bg-gradient-to-r bg-[#000000] opacity-[0.8]"
+            class="relative flex flex-col items-center w-full h-full mx-auto sm:max-w-[760px] md:max-w-[980px] lg:max-w-[1024px] lg:max-w-[1360px] xl:max-w-[1440px] 2xl:max-w-[1628px] sm:px-0 md:px-10 lg:px-162 xl:px-20 2xl:px-28"
         >
-        </div>
-        <div
-            class="relative w-full mx-auto sm:max-w-[760px] md:max-w-[980px] lg:max-w-[1024px] lg:max-w-[1360px] xl:max-w-[1440px] 2xl:max-w-[1628px] sm:px-0 md:px-10 lg:px-162 xl:px-20 2xl:px-28"
-        >
-        <!-- style="box-shadow: 0 4px 20px 15px #000;" -->
-            <div
-                class="relative flex bg-[#111]"
-                style="box-shadow: 0 4px 20px 15px #000;"
-            >
-                <div class="relative p-8">
-                    <!-- neon-text--intermittent -->
-                    <h1 class="text-3xl text-white">Servicios</h1>
-                    <p class="mt-8 text-white font-['Satoshi']">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Blanditiis numquam magni temporibus qui inventore
-                        asperiores nulla assumenda, suscipit, consequatur
-                        necessitatibus nostrum! Magni aliquam earum deserunt
-                        delectus recusandae? Eveniet, sed iusto?
-                    </p>
-                    <div class="relative mt-10">
-                        <a
-                            class="btn btn-4 btn-4c border-[#111111] bg-white before:text-[#FFFFFF] text-black hover:bg-[#dc0000] hover:text-[#FFFFFF] icon-arrow-right uppercase"
-                            href="/our-services">SERVICIOS</a
-                        >
-                    </div>
-                </div>
-                <div class="relative p-8 ">
-                    <!-- class="neon-border" -->
-                    <Image  src={girl1} alt="Girl"/>
-                </div>
-            </div>
-            <div></div>
+            <img src={logoNoLetters.src} alt="" width="400" height="auto">
+            <h1 class="text-[48px] text-[#dc0000]">Estamos para complacerte</h1>
+            <h3 class="text-[30px] font-['Satoshi'] uppercase">Hacemos realidad cada una de tus fantasias</h3>
+            <h5 class="text-[#dc0000] font-['Satoshi'] uppercase">acompañantes, fantasias, fiestas privadas, orgías y mucho más</h5>
+            <a
+            class="mt-4 btn btn-4 btn-4c border-[#fff] bg-transparent text-[#fff] before:text-[#FFFFFF]  hover:bg-[#dc0000] hover:text-[#FFFFFF] hover:border-[#dc0000] icon-arrow-right uppercase"
+            href="/our-services">SERVICIOS</a>
         </div>
     </section>
-
-    <!-- <section class="w-full py-20">
-        <div
-            class="relative float-left w-full h-[700px] bg-[url('/src/assets/images/TREBOL-BLACK-01-F882151-01-32.webp')] bg-repeat"
-        >
-            <div class="w-2/4 h-full p-0 float-left">
-                <img
-                    class="w-full h-full object-cover"
-                    src="/src/assets/girls/1.jpg"
-                    alt=""
-                />
-            </div>
-            <div
-                class="relative w-2/4 h-full p-8 float-left"
-            >
-                <div class="absolute inset-x-0 inset-y-0 w-full h-full bg-[#000000] opacity-[0.9]"></div>
-                <div class="relative inset-x-0 inset-y-0 w-full h-full">
-                    <h1 class="text-white text-3xl">FENIX ESCORTS</h1>
-                    <p class="mt-4 text-white">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Donec venenatis eros nibh. Aenean sit amet diam ac neque
-                        auctor semper a ut tellus. Nam posuere tincidunt nulla.
-                        Pellentesque et placerat elit. Cras accumsan quis ex at
-                        aliquet. Morbi vehicula lacus elit, vitae consequat nunc
-                        fringilla nec. Cras porta sed dolor in ornare. Mauris
-                        consequat ex mauris, ac efficitur magna scelerisque et.
-
-                        
-                    </p>
-                    <p class="mt-4 text-white">
-                        Donec euismod leo in egestas viverra. Sed porta nulla a
-                        aliquet consequat. Class aptent taciti sociosqu ad litora
-                        torquent per conubia nostra, per inceptos himenaeos. Sed
-                        ullamcorper venenatis rutrum. Quisque vel metus orci. Sed
-                        tempus felis eget orci finibus, a facilisis massa maximus.
-                        Phasellus consectetur at tellus vitae tristique. Sed a
-                        suscipit magna. Integer felis nisi, mattis at convallis sit
-                        amet, sagittis et lectus. Nunc vel justo tincidunt, vehicula
-                        ante et, bibendum velit.
-                    </p>
-                    <div class="relative mt-10 flex justify-center">
-                        <a
-                            class="btn btn-4 btn-4c border-white bg-white before:text-white text-black hover:bg-[#dc0000] hover:border-[#dc0000] hover:text-white icon-arrow-right uppercase"
-                            href="/about-us">Nosotros</a
-                        >
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> -->
 
     <section class="float-left w-full py-20 mb-20">
         <div class="float-left w-full divide-x divide-gray-700">
