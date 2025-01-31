@@ -28,17 +28,18 @@ import "../styles/index.scss";
         <EscortsCarousel />
     </section>
 
-    <section class={`float-left relative w-full h-screen py-20 bg-[url('/src/assets/images/FOTO_BANNER_SERVICIOS_FENIX.png')] bg-cover bg-no-repeat`}>
+    <section class={`float-left relative w-full h-screen min-h-[700px] lg:p-4 py-10 bg-[url('/src/assets/images/FOTO_BANNER_SERVICIOS_FENIX.png')] bg-cover bg-no-repeat`}>
         <div
             class="relative flex flex-col items-center w-full h-full mx-auto sm:max-w-[760px] md:max-w-[980px] lg:max-w-[1024px] lg:max-w-[1360px] xl:max-w-[1440px] 2xl:max-w-[1628px] sm:px-0 md:px-10 lg:px-162 xl:px-20 2xl:px-28"
         >
-            <img src={logoNoLetters.src} alt="" width="400" height="auto">
-            <h1 class="text-[48px] text-[#dc0000]">Estamos para complacerte</h1>
-            <h3 class="text-[30px] font-['Satoshi'] uppercase">Hacemos realidad cada una de tus fantasias</h3>
+            <img class="w-[100px] sm:w-[150px] md:w-[200px] lg:w-[200px] xl:w-[400px]" src={logoNoLetters.src} alt="">
+            <h1 class="text-[22px] sm:text-[24px] md:text-[26px] lg:text-[30px] xl:text-[48px] text-[#dc0000]">Estamos para complacerte</h1>
+            <h3 class="text-[16px] sm:text-[18px] md:text-[20px] lg:text-[20px] xl:text-[30px] font-['Satoshi'] uppercase">Hacemos realidad cada una de tus fantasias</h3>
             <h5 class="text-[#dc0000] font-['Satoshi'] uppercase">acompañantes, fantasias, fiestas privadas, orgías y mucho más</h5>
             <a
             class="mt-4 btn btn-4 btn-4c border-[#fff] bg-transparent text-[#fff] before:text-[#FFFFFF]  hover:bg-[#dc0000] hover:text-[#FFFFFF] hover:border-[#dc0000] icon-arrow-right uppercase"
             href="/our-services">SERVICIOS</a>
+            <span class="mt-2 text-[#dc0000]">24 HORAS</span>
         </div>
     </section>
 
