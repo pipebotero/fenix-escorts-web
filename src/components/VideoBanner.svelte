@@ -5,17 +5,17 @@
     let muted = true;
     function setMuteVideo() {
         muted = !muted;
-        let videoRef = document.getElementById('video-bg')
-        if(muted) {
+        let videoRef = document.getElementById("video-bg");
+        if (muted) {
             videoRef.setAttribute("muted", "");
             videoRef.muted = true;
-        }
-        else {
+        } else {
             videoRef.removeAttribute("muted");
             videoRef.muted = false;
         }
     }
 </script>
+
 <div class="w-full h-screen relative">
     <video
         id="video-bg"
@@ -23,18 +23,29 @@
         src={homeVideo}
         autoplay
         loop
-        muted>
+        muted
+    >
         <track kind="captions" />
     </video>
     <div
         class="flex flex-col justify-end items-end w-full h-screen absolute top-0 p-10"
     >
-        <button id="mute-btn" on:click={setMuteVideo}>
+        <button id="mute-btn" class="z-[10]" on:click={setMuteVideo}>
             {#if muted}
-                <img src={muteIcon.src} alt="mute" width="32" height="auto">
+                <img src={muteIcon.src} alt="mute" width="32" height="auto" />
             {:else}
-            <img src={volumeIcon.src} alt="volume" width="32" height="auto">
+                <img
+                    src={volumeIcon.src}
+                    alt="volume"
+                    width="32"
+                    height="auto"
+                />
             {/if}
         </button>
+    </div>
+    <div
+        class="flex flex-col justify-end items-center w-full h-screen absolute top-0 p-10"
+    >
+        <slot></slot>
     </div>
 </div>
