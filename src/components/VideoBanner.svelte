@@ -28,7 +28,7 @@
         <track kind="captions" />
     </video>
     <div
-        class="flex flex-col justify-end items-end w-full h-screen absolute top-0 p-10"
+        class="flex flex-col justify-end items-end w-full h-screen absolute top-0 px-10 py-[72px]"
     >
         <button id="mute-btn" class="z-[10]" on:click={setMuteVideo}>
             {#if muted}

@@ -1,0 +1,75 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import "../../styles/index.scss";
+
+const { cookies, redirect } = Astro;
+
+const accessToken = cookies.get("sb-access-token");
+const refreshToken = cookies.get("sb-refresh-token");
+
+if (accessToken && refreshToken) {
+    return redirect("/dashboard");
+}
+---
+
+<Layout title="Iniciar sesión">
+    <div class="w-full h-screen flex justify-center items-center">
+        <div class="flex flex-col p-10 rounded-lg bg-[#282828] w-[300px] gap-6">
+            <div class="flex flex justify-center items-center">
+                <h1>Iniciar sesión</h1>
+            </div>
+            <form
+                class="flex flex-col gap-4"
+                action="/api/auth/signin"
+                method="post"
+            >
+                <span class="input input--chisato">
+                    <input
+                        class="input__field input__field--chisato"
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder=""
+                    />
+                    <label
+                        class="input__label input__label--chisato"
+                        for="email"
+                    >
+                        <span
+                            class="input__label-content input__label-content--chisato"
+                            data-content="Email">Correo electrónico</span
+                        >
+                    </label>
+                </span>
+                <span class="input input--chisato">
+                    <input
+                        class="input__field input__field--chisato"
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder=""
+                    />
+                    <label
+                        class="input__label input__label--chisato"
+                        for="password"
+                    >
+                        <span
+                            class="input__label-content input__label-content--chisato"
+                            data-content="Contraseña">Contraseña</span
+                        >
+                    </label>
+                </span>
+                <div
+                    class="w-full cursor-pointer mt-[10px] mb-[0px] h-[55px] bg-[#dc0000] text-center lg::h-[78px] grid place-items-center"
+                >
+                    <button
+                        type="submit"
+                        class="btn text-white text-center flex items-center justify-center uppercase" style="padding: 0;"
+                    >
+                        Iniciar sesión</button
+                    >
+                </div>
+            </form>
+        </div>
+    </div>
+</Layout>
