@@ -1,6 +1,7 @@
 ---
-import Layout from "../../layouts/Layout.astro";
-import { supabase } from "../../lib/supabase";
+export const prerender = false;
+import Layout from "../layouts/Layout.astro";
+import { supabase } from "../lib/supabase";
 
 const { cookies, redirect } = Astro;
 
@@ -8,7 +9,7 @@ const accessToken = cookies.get("sb-access-token");
 const refreshToken = cookies.get("sb-refresh-token");
 
 if (!accessToken || !refreshToken) {
-  return redirect("/admin/signin");
+  return redirect("/signin");
 }
 
 const { data, error } = await supabase.auth.setSession({
@@ -24,7 +25,7 @@ if (error) {
     path: "/",
   });
 
-  return redirect("/admin/signin");
+  return redirect("/signin");
 }
 
 const email = data?.user?.email;
