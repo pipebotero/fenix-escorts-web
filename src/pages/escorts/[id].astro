@@ -7,18 +7,8 @@ import "../../styles/index.scss";
 import girl1 from "/src/assets/girls/1.jpg";
 import { supabase } from "../../lib/supabase";
 
-
 export const prerender = false;
 
-export async function GET() {
-  let number = Math.random();
-  return new Response(
-    JSON.stringify({
-      number,
-      message: `Here's a random number: ${number}`,
-    })
-  );
-}
 const { id } = Astro.params;
 const { height, hair, eyes, tits, ass } = {
   height: "179",
