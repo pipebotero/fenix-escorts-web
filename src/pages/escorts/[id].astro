@@ -456,10 +456,12 @@ const getWidthEachPicture = () => {
             `url("${nextIcon.src}"), auto`)
         : (portfolioSection!.style.cursor = "default");
   }
-  transitionImgGallery();
-  document.addEventListener("astro:after-swap", transitionImgGallery);
+  
 
-  (function () {})();
+  (function () {
+    transitionImgGallery();
+    document.addEventListener("astro:after-swap", transitionImgGallery);
+  })();
 </script>
 <style>
   .slick-initialized .slick-slide {
