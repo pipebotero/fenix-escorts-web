@@ -6,8 +6,6 @@ import EscortSpecs from "../../components/EscortSpecs.astro";
 import Layout from "../../layouts/Layout.astro";
 import "../../styles/index.scss";
 
-import { supabase } from "../../lib/supabase";
-
 const { id } = Astro.params;
 const { height, hair, eyes, tits, ass } = {
   height: "179",
@@ -16,6 +14,8 @@ const { height, hair, eyes, tits, ass } = {
   tits: 34,
   ass: "L",
 };
+
+import { supabase } from "../../lib/supabase";
 
 const { data, error } = await supabase
   .schema("public")
