@@ -20,6 +20,8 @@ const { data, error } = await supabase
   .select();
 
 const escorts: Array<any> | null = data;
+
+console.log('SUPABASE_URL',  import.meta.env.SUPABASE_URL);
 // console.log({ escorts });
 ---
 
