@@ -5,7 +5,6 @@ import Footer from "../components/Footer.astro";
 // import VideoBanner from "../components/VideoBanner.astro"
 import VideoBanner from "../components/VideoBanner.svelte"
 import EscortsCarousel from "../components/EscortsCarousel.astro";
-import { Image } from 'astro:assets';
 import mosaicImage from "/src/assets/images/TREBOL-BLACK-01-F882151-01-32.webp";
 import homeVideo from "/src/assets/video/FINAL_BannerWebFenix_01.mp4";
 import girl1 from "/src/assets/girls/1.jpg";
@@ -194,7 +193,7 @@ const escorts: Array<any> | null = data;
     <section class="float-left w-full py-20">
         <div class="w-full h-[600px] float-left bg-white">
             <div class="w-2/4 p-0 h-full float-left">
-                <Image class="w-full h-full object-cover" src={girl1} alt="Girl"/>
+                <img class="w-full h-full object-cover" src={girl1.src} alt="Girl"/>
             </div>
             <div class="w-2/4 h-full p-8 float-left">
                 <h1 class="text-black text-3xl text-center">
