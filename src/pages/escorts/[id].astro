@@ -1,13 +1,12 @@
 ---
+export const prerender = false;
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
 import EscortSpecs from "../../components/EscortSpecs.astro";
 import Layout from "../../layouts/Layout.astro";
 import "../../styles/index.scss";
-import girl1 from "/src/assets/girls/1.jpg";
-import { supabase } from "../../lib/supabase";
 
-export const prerender = false;
+import { supabase } from "../../lib/supabase";
 
 const { id } = Astro.params;
 const { height, hair, eyes, tits, ass } = {
