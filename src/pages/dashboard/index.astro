@@ -1,7 +1,7 @@
 ---
 export const prerender = false;
-import Layout from "../layouts/Layout.astro";
-import { supabase } from "../lib/supabase";
+import DashboardLayout from "../../layouts/DashboardLayout.astro";
+import { supabase } from "../../lib/supabase";
 
 const { cookies, redirect } = Astro;
 
@@ -27,13 +27,9 @@ if (error) {
 
   return redirect("/signin");
 }
-
-const email = data?.user?.email;
 ---
-<Layout title="panel de control">
-  <h1>Bienvenido {email}</h1>
-  <p>Estamos felices de verte aquí</p>
-  <form action="/api/auth/signout">
-    <button type="submit">Cerrar sesión</button>
-  </form>
-</Layout>
+<DashboardLayout title="Panel de control">
+  <div class="">
+    Este es el index
+  </div>
+</DashboardLayout>

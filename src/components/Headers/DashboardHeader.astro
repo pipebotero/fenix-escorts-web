@@ -1,0 +1,47 @@
+---
+import searchIcon from "/src/assets/icons/search_icon.svg";
+---
+
+<header class="nav-header sticky flex justify-between items-center w-full h-[80px] pr-4">
+  <!-- style="border: 1px solid red" -->
+  <div class="bg-[#fcfafb] rounded-3xl">
+    <div class="flex p-2 gap-2">
+        <div>
+            <img src={searchIcon.src} alt="">
+        </div>
+        <div>
+            <input class="search-input bg-[#fcfafb]" type="text" name="" id="" placeholder="Buscar">
+        </div>
+    </div>
+  </div>
+  <nav class="">
+      <ul class="flex gap-7">
+          <!-- <li>
+              <a href="/escorts">Escorts</a>
+          </li>
+          <li>
+              <a href="/our-services">Servicios</a>
+          </li>
+          <li>
+              <a href="/contact-us">Contacto</a>
+          </li>
+          <li>
+              <a href="/get-scouted">Se Fenix</a>
+          </li> -->
+          <li>
+            <form action="/api/auth/signout">
+              <button type="submit">Salir</button>
+            </form>
+          </li>
+          <!-- <li>
+              <a href="/idiomas">Idiomas</a>
+          </li> -->
+      </ul>
+  </nav>
+</header>
+<style>
+    .search-input:focus-visible {
+        border: none;
+        outline: none;
+    }
+</style>

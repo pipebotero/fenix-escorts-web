@@ -1,0 +1,48 @@
+---
+import "../../styles/index.scss";
+
+---
+
+<div class="w-[280px] h-screen sticky flex grow shrink-[0] basis-auto flex-col">
+  <div class="flex flex-col">
+    <div class="flex w-full">
+      <a
+          class="block w-[200px] h-[80px] bg-contain bg-no-repeat bg-[url('/src/assets/logo/LOGO_H-FENIX_ESCORTS.png')]"
+          href="/dashboard"></a>
+    </div>
+  </div>
+  <div>
+    <nav class="flex flex-col w-full p-4">
+      <div class="px-2 py-3 uppercase text-[#707070] font-['Satoshi'] font-normal">Dashboard</div>
+      <ul class="flex flex-col w-full">
+        <li class="px-2 py-3 w-full hover:text-[#dc0000] hover:bg-[#e7e0e0] rounded-3xl">
+          <a class="hyperlink font-medium w-full block" href="/dashboard/escorts">Escorts</a>
+        </li>
+        <li class="px-2 py-3 w-full hover:text-[#dc0000] hover:bg-[#e7e0e0] rounded-3xl">
+          <a class="hyperlink font-medium w-full block" href="">Contacto</a>
+        </li>
+        <li class="px-2 py-3 w-full hover:text-[#dc0000] hover:bg-[#e7e0e0] rounded-3xl">
+          <a class="hyperlink font-medium w-full block" href="">Configuraciones</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
+<script>
+  // Cache the list, and the items
+const list = document.querySelector(' nav ul');
+const links = list!.querySelectorAll('a');
+
+// Add one listener to the list element
+list!.addEventListener('click', handleClick);
+
+// If the clicked element is a link remove all
+// the active classes from the other links, and then
+// add the active class to the link that was clicked on
+function handleClick(e: any) {
+  if (e.target.matches('a')) {
+    links.forEach(link => link.classList.remove('active'));
+    e.target.classList.add('active');
+  }
+}
+</script>

@@ -1,0 +1,103 @@
+---
+export const prerender = false;
+import DashboardLayout from "../../../layouts/DashboardLayout.astro";
+import { supabase } from "../../../lib/supabase";
+import euroIcon from "/src/assets/icons/euro.png";
+import editIcon from "/src/assets/icons/edit_icon.svg";
+
+const baseUrl = "/dashboard/escorts/";
+const { cookies, redirect } = Astro;
+const accessToken = cookies.get("sb-access-token");
+const refreshToken = cookies.get("sb-refresh-token");
+
+const getUrl = (id: any) => {
+    return `${baseUrl}${id}`;
+};
+
+if (!accessToken || !refreshToken) {
+  return redirect("/signin");
+}
+
+await checkAccess();
+
+async function checkAccess() {
+  const { data, error } = await supabase.auth.setSession({
+    refresh_token: refreshToken!.value,
+    access_token: accessToken!.value,
+  });
+
+  if (error) {
+    cookies.delete("sb-access-token", {
+      path: "/",
+    });
+    cookies.delete("sb-refresh-token", {
+      path: "/",
+    });
+
+    return redirect("/signin");
+  }
+}
+
+const { data, error } = await supabase
+  .schema("public")
+  .from("escorts")
+  .select();
+// console.log(data?.length)
+const escorts: Array<any> | null = data;
+---
+
+<DashboardLayout title="Panel de control">
+  <div class="">
+    <div><h1>Escorts</h1></div>
+    {
+      escorts !== null && escorts?.length > 0 && (
+        <div class="flex flex-col w-full">
+          <div class="flex text-[#707070] font-medium bg-[#f0eaea] p-2">
+            <div class="flex-[1]">
+              <span>Portada</span>
+            </div>
+            <div class="flex-[1]">
+              <span>Nombre</span>
+            </div>
+            <div class="flex-[1]">
+              <span>Precios</span>
+            </div>
+            <div class="flex-[0.5]">
+              <span>Acciones</span>
+            </div>
+          </div>
+          {escorts!.map((escort) => (
+            <div class="flex items-center p-2">
+              <div class="flex-[1]">
+                <div class="w-[50px] h-[50px]">
+                  <img class="w-[50px] h-[50px] object-cover rounded-full" src={escort.pictures.find((p: any) => p.cover).src} alt="">
+                </div>
+              </div>
+              <div class="flex-[1]">
+                <span>{escort.name}</span>
+              </div>
+              <div class="flex-[1] flex flex gap-4">
+                {escort.prices.map((price: any) => (
+                  <div class="flex flex-col">
+                    <span>{price.hours} Hora</span>
+                    <div class="flex items-center gap-1">
+                      <span>{price.value}</span>
+                      <div>
+                        <img src={euroIcon.src} alt="" width="20" height="20">
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <div class="flex-[0.5]">
+                <a class="" href={getUrl(escort.id)}>
+                  <img src={editIcon.src} alt="">
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
+      )
+    }
+  </div>
+</DashboardLayout>

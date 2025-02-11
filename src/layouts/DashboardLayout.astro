@@ -1,0 +1,17 @@
+---
+import Layout from "./Layout.astro";
+import DashboardHeader from "../components/Headers/DashboardHeader.astro"
+import Sidebar from "../components/Dashboard/Sidebar.astro"
+
+---
+<Layout title="panel de control">
+  <div class="flex flex-auto bg-[#f0eaea] text-[#000]">
+    <Sidebar></Sidebar>
+    <div class="relative h-screen wrapper flex flex-auto flex-col w-full">
+      <DashboardHeader />
+      <main class="relative h-full bg-[#fcfafb] p-8 rounded-s-3xl">
+        <slot />
+      </main>
+    </div>
+  </div>  
+</Layout>

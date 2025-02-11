@@ -1,76 +1,15 @@
 ---
-import girl1 from "/src/assets/girls/1.jpg";
-import girl2 from "/src/assets/girls/2.jpg";
-import girl3 from "/src/assets/girls/3.jpg";
-
 const baseUrl = "/escorts/";
 
-let escorts = [
-    {
-        id: 1,
-        name: "Aria Mesa",
-        image: girl1.src,
-    },
-    {
-        id: 2,
-        name: "Dora",
-        image: girl2.src,
-    },
-    {
-        id: 3,
-        name: "Caitlyn",
-        image: girl3.src,
-    },
-    {
-        id: 4,
-        name: "Aria Mesa",
-        image: girl1.src,
-    },
-    {
-        id: 5,
-        name: "Dora",
-        image: girl2.src,
-    },
-    {
-        id: 6,
-        name: "Caitlyn",
-        image: girl3.src,
-    },
-    {
-        id: 7,
-        name: "Aria Mesa",
-        image: girl1.src,
-    },
-    {
-        id: 8,
-        name: "Dora",
-        image: girl2.src,
-    },
-    {
-        id: 9,
-        name: "Caitlyn",
-        image: girl3.src,
-    },
-    {
-        id: 10,
-        name: "Aria Mesa",
-        image: girl1.src,
-    },
-    {
-        id: 11,
-        name: "Dora",
-        image: girl2.src,
-    },
-    {
-        id: 12,
-        name: "Caitlyn",
-        image: girl3.src,
-    },
-];
-const getUrl = (id) => {
+const { escorts }: any = Astro.props;
+
+const getUrl = (id: any) => {
     return `${baseUrl}${id}`;
 };
-const nameFormat = (name) => {
+const getCover = (escort: any) => {
+  return escort.pictures.find((p: any) => p.cover).src;
+};
+const nameFormat = (name: any) => {
     return name.indexOf(" ") >= 0 ? name.replace(" ", "<br>") : name;
 };
 ---
@@ -81,7 +20,7 @@ const nameFormat = (name) => {
         class="mt-2 lg:-mt-[0.6rem] pb-10 grid grid-cols-2 gap-x-[2.5rem] md:gap-x-[4.6vw] xl:gap-x-[4.1vw] 2xl:gap-x-[3.8vw] xxl:gap-x-[3vw] sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 xxl:grid-cols-6 xxxl:grid-cols-7 xxxxl:grid-cols-8 gap-y-[2rem] lg:gap-y-[4.4rem]"
     >
         {
-            escorts.map((escort) => (
+            escorts.map((escort: any) => (
                 <div class="flex flex-col items-center aspect-[3/4] origin-top-left ease-in-out duration-[250ms] transition hover:scale-[1.1] cursor-pointer">
                     <a
                         class="list-item-anchor w-full transition aspect-[3/4] overflow-hidden relative"
@@ -90,7 +29,7 @@ const nameFormat = (name) => {
                         <img
                             transition:name={`img-${escort.id}`}
                             class="list-item-overlay-img w-full h-full object-cover"
-                            src={escort.image}
+                            src={getCover(escort)}
                             alt=""
                         />
                         <div class="list-item-overlay-container absolute w-full h-full top-0 left-0 opacity-0">

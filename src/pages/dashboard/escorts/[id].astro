@@ -1,0 +1,87 @@
+---
+export const prerender = false;
+import DashboardLayout from "../../../layouts/DashboardLayout.astro";
+import { supabase } from "../../../lib/supabase";
+import euroIcon from "/src/assets/icons/euro.png";
+
+const { cookies, redirect } = Astro;
+const { id } = Astro.params;
+
+const accessToken = cookies.get("sb-access-token");
+const refreshToken = cookies.get("sb-refresh-token");
+
+if (!accessToken || !refreshToken) {
+  return redirect("/signin");
+}
+
+await checkAccess();
+
+async function checkAccess() {
+  const { data, error } = await supabase.auth.setSession({
+    refresh_token: refreshToken!.value,
+    access_token: accessToken!.value,
+  });
+
+  if (error) {
+    cookies.delete("sb-access-token", {
+      path: "/",
+    });
+    cookies.delete("sb-refresh-token", {
+      path: "/",
+    });
+
+    return redirect("/signin");
+  }
+}
+
+const { data, error } = await supabase
+  .schema("public")
+  .from("escorts")
+  .select()
+  .eq("id", id)
+  .limit(1);
+// console.log(data?.length)
+// const escort: any | null = data![0];
+let escort: any = [];
+if (data && data.length > 0) {
+  escort = data[0];
+}
+---
+
+<DashboardLayout title="Panel de control">
+  <div class="flex flex-col gap-8">
+    <div>
+      <span class="input input--chisato">
+        <input
+          class="input__field input__field--chisato"
+          type="text"
+          id="input-name"
+          placeholder=""
+          value={escort.name}
+        />
+        <label class="input__label input__label--chisato" for="input-name">
+          <span
+            class="input__label-content input__label-content--chisato"
+            data-content="Nombre">Nombre</span
+          >
+        </label>
+      </span>
+    </div>
+    {
+      escort && escort.pictures && escort.pictures.length > 0 && (
+        <div class="flex flex-col">
+          <div>
+            <span>Fotos</span>
+          </div>
+          <div class="flex gap-4">
+            {escort.pictures.map((pic: any) => (
+              <div class="aspect-[3/4]">
+                <img class="w-full h-full object-cover" src={pic.src} alt="" />
+              </div>
+            ))}
+          </div>
+        </div>
+      )
+    }
+  </div>
+</DashboardLayout>

@@ -5,8 +5,8 @@ import EscortSpecs from "../../components/EscortSpecs.astro";
 import Layout from "../../layouts/Layout.astro";
 import "../../styles/index.scss";
 import girl1 from "/src/assets/girls/1.jpg";
-import girl2 from "/src/assets/girls/2.jpg";
-import girl3 from "/src/assets/girls/3.jpg";
+import { supabase } from "../../lib/supabase";
+
 
 export const prerender = false;
 
@@ -27,6 +27,27 @@ const { height, hair, eyes, tits, ass } = {
   tits: 34,
   ass: "L",
 };
+
+const { data, error } = await supabase
+  .schema("public")
+  .from("escorts")
+  .select()
+  .eq("id", id)
+  .limit(1);
+// console.log(data?.length)
+// const escort: any | null = data![0];
+let escort: any = [];
+if (data && data.length > 0) {
+  escort = data[0];
+}
+
+const getWidthGalleryContainer = () => {
+  return `${escort.pictures.length * 100}%`;
+}
+
+const getWidthEachPicture = () => {
+  return `${100 / escort.pictures.length}%`;
+}
 ---
 
 <Layout>
@@ -47,7 +68,7 @@ const { height, hair, eyes, tits, ass } = {
           <div
             class="w-full pointer-events-auto z-[20] relative 2xl:mix-blend-difference"
           >
-            <h1 class="text-[1.7rem] uppercase text-[#dc0000] mb-6">ARIA</h1>
+            <h1 class="text-[1.7rem] uppercase text-[#dc0000] mb-6">{escort.name}</h1>
             <EscortSpecs
               height={height}
               hair={hair}
@@ -94,38 +115,41 @@ const { height, hair, eyes, tits, ass } = {
           <div
             id="slick-track"
             class="slick-track"
-            style="width:800%; left:0%; opacity: 1; transform: translate3d(0px, 0px, 0px);"
+            style=`width:${getWidthGalleryContainer()}; left:0%; opacity: 1; transform: translate3d(0px, 0px, 0px);`
           >
             <!-- transition: -webkit-transform 1100ms cubic-bezier(0.645, 0.045, 0.355, 1); -->
-            <div
-              data-index="0"
-              class="slick-slide slick-active slick-current"
-              tabindex="-1"
-              aria-hidden="false"
-              style="outline:none; width:12.5%"
-            >
-              <div>
-                <div tabindex="-1" style="width: 100%; display: inline-block;">
-                  <div
-                    class="flex flex-col gap-8 md:gap-4 my-12 md:flex-row w-full justify-center items-center md:my-12"
-                    data-projection-id="7"
-                  >
+             {escort.pictures.map((pic: any) => (
+                <div
+                data-index="0"
+                class="slick-slide slick-active slick-current"
+                tabindex="-1"
+                aria-hidden="false"
+                style=`outline:none; width:${getWidthEachPicture()}`
+              >
+                <div>
+                  <div tabindex="-1" style="width: 100%; display: inline-block;">
                     <div
-                      class="w-[25%] flex pointer-events-none justify-end items-center h-full"
+                      class="flex flex-col gap-8 md:gap-4 my-12 md:flex-row w-full justify-center items-center md:my-12"
+                      data-projection-id="7"
                     >
-                    </div><img
-                      transition:name={`img-${id}`}
-                      class="md:h-[calc(100vh_-_9.2rem)] overflow-hidden object-cover h-auto aspect-[3/4] object-top"
-                      alt="Aalyah Ross"
-                      src={girl1.src}
-                      data-projection-id="8"
-                      style="opacity: 1;"
-                    />
+                      <div
+                        class="w-[25%] flex pointer-events-none justify-end items-center h-full"
+                      >
+                      </div><img
+                        transition:name={`img-${id}`}
+                        class="md:h-[calc(100vh_-_9.2rem)] overflow-hidden object-cover h-auto aspect-[3/4] object-top"
+                        alt="Aalyah Ross"
+                        src={pic.src}
+                        data-projection-id="8"
+                        style="opacity: 1;"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div
+             ))}
+            
+            <!-- <div
               data-index="1"
               class="slick-slide"
               tabindex="-1"
@@ -147,16 +171,11 @@ const { height, hair, eyes, tits, ass } = {
                       alt="Aalyah Ross"
                       src="https://mediaslide-us.storage.googleapis.com/imgmodels/pictures/5442/113439/large-1727200577-64d8966d6e07b13516244f01f8aa6833.jpg"
                     />
-                    <!-- <img
-                      loading="eager"
-                      class="md:h-[calc(100vh_-_9.2rem)] portfolio-image overflow-hidden min-h-[400px] object-contain"
-                      alt="Aalyah Ross"
-                      src="https://mediaslide-us.storage.googleapis.com/imgmodels/pictures/5442/113439/large-1727200578-94f30e0d54e436ffcd0587a93a9df4b9.jpg"
-                    /> -->
                   </div>
                 </div>
               </div>
-            </div><div
+            </div>
+            <div
               data-index="2"
               class="slick-slide"
               tabindex="-1"
@@ -178,16 +197,12 @@ const { height, hair, eyes, tits, ass } = {
                       alt="Aalyah Ross"
                       src="https://mediaslide-us.storage.googleapis.com/imgmodels/pictures/5442/113439/large-1727200578-4ea01163f7fbd6baaffd40d6ce57937f.jpg"
                     />
-                    <!-- <img
-                      loading="eager"
-                      class="md:h-[calc(100vh_-_9.2rem)] portfolio-image overflow-hidden min-h-[400px] object-contain"
-                      alt="Aalyah Ross"
-                      src="https://mediaslide-us.storage.googleapis.com/imgmodels/pictures/5442/113439/large-1727200579-1136e7538275f9d7ab7c8bfdee4b2612.jpg"
-                    /> -->
+
                   </div>
                 </div>
               </div>
-            </div><div
+            </div>
+            <div
               data-index="3"
               class="slick-slide"
               tabindex="-1"
@@ -209,16 +224,12 @@ const { height, hair, eyes, tits, ass } = {
                       alt="Aalyah Ross"
                       src="https://mediaslide-us.storage.googleapis.com/imgmodels/pictures/5442/113439/large-1727200579-2d8fdc11ee35a66c0bae8e8a9543c784.jpg"
                     />
-                    <!-- <img
-                      loading="eager"
-                      class="md:h-[calc(100vh_-_9.2rem)] portfolio-image overflow-hidden min-h-[400px] object-contain"
-                      alt="Aalyah Ross"
-                      src="https://mediaslide-us.storage.googleapis.com/imgmodels/pictures/5442/113439/large-1727200582-5f13b45116c03df3f43a583264b8838f.jpg"
-                    /> -->
+                    
                   </div>
                 </div>
               </div>
-            </div><div
+            </div>
+            <div
               data-index="4"
               class="slick-slide"
               tabindex="-1"
@@ -240,16 +251,11 @@ const { height, hair, eyes, tits, ass } = {
                       alt="Aalyah Ross"
                       src="https://mediaslide-us.storage.googleapis.com/imgmodels/pictures/5442/113439/large-1727200582-a207b7e7b4e081f8941bc545446e683a.jpg"
                     />
-                    <!-- <img
-                      loading="eager"
-                      class="md:h-[calc(100vh_-_9.2rem)] portfolio-image overflow-hidden min-h-[400px] object-contain"
-                      alt="Aalyah Ross"
-                      src="https://mediaslide-us.storage.googleapis.com/imgmodels/pictures/5442/113439/large-1727200583-8e93cc223e3cbce6c1e0078c27f7cfac.jpg"
-                    /> -->
                   </div>
                 </div>
               </div>
-            </div><div
+            </div>
+            <div
               data-index="5"
               class="slick-slide"
               tabindex="-1"
@@ -271,16 +277,11 @@ const { height, hair, eyes, tits, ass } = {
                       alt="Aalyah Ross"
                       src="https://mediaslide-us.storage.googleapis.com/imgmodels/pictures/5442/113439/large-1727200583-ef9d213128842f96a9c9a24732fafaf3.jpg"
                     />
-                    <!-- <img
-                      loading="eager"
-                      class="md:h-[calc(100vh_-_9.2rem)] portfolio-image overflow-hidden min-h-[400px] object-contain"
-                      alt="Aalyah Ross"
-                      src="https://mediaslide-us.storage.googleapis.com/imgmodels/pictures/5442/113439/large-1727200584-0fa7b7333fc33cf6a463308e680d0aeb.jpg"
-                    /> -->
                   </div>
                 </div>
               </div>
-            </div><div
+            </div>
+            <div
               data-index="6"
               class="slick-slide"
               tabindex="-1"
@@ -302,16 +303,11 @@ const { height, hair, eyes, tits, ass } = {
                       alt="Aalyah Ross"
                       src="https://mediaslide-us.storage.googleapis.com/imgmodels/pictures/5442/113439/large-1727200584-041a2a64f99f975e820a0a350fb311d8.jpg"
                     />
-                    <!-- <img
-                      loading="eager"
-                      class="md:h-[calc(100vh_-_9.2rem)] portfolio-image overflow-hidden min-h-[400px] object-contain"
-                      alt="Aalyah Ross"
-                      src="https://mediaslide-us.storage.googleapis.com/imgmodels/pictures/5442/113439/large-1727200585-09d10787676b1ef2806e0182a8211bed.jpg"
-                    /> -->
                   </div>
                 </div>
               </div>
-            </div><div
+            </div>
+            <div
               data-index="7"
               class="slick-slide"
               tabindex="-1"
@@ -336,7 +332,7 @@ const { height, hair, eyes, tits, ass } = {
                   </div>
                 </div>
               </div>
-            </div>
+            </div> -->
           </div>
         </div><button
           type="button"

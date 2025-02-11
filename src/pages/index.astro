@@ -12,8 +12,16 @@ import girl1 from "/src/assets/girls/1.jpg";
 import logoNoLetters from "/src/assets/logo/logo-no-letters.png";
 import ScrollIndicator from "../components/ScrollIndicator.svelte"
 import "../styles/index.scss";
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+
+import { supabase } from "../lib/supabase";
+
+const { data, error } = await supabase
+  .schema("public")
+  .from("escorts")
+  .select();
+
+const escorts: Array<any> | null = data;
+// console.log({ escorts });
 ---
 
 <Layout>
@@ -25,7 +33,9 @@ import "../styles/index.scss";
         </a>
     </VideoBanner>
     <section id="escorts" class="w-full py-20 mb-10">
-        <EscortsCarousel />
+        {escorts && escorts.length > 0 && (
+            <EscortsCarousel escorts={escorts} />
+        )}
     </section>
 
     <section class={`float-left relative w-full h-screen min-h-[700px] lg:p-4 py-10 bg-[url('/src/assets/images/FOTO_BANNER_SERVICIOS_FENIX.png')] bg-cover bg-no-repeat`}>
